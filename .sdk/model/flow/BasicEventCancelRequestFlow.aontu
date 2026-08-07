@@ -1,0 +1,18 @@
+# BasicEventCancelRequestFlow
+
+main: kit: flow: BasicEventCancelRequestFlow:
+{
+  entity: "event_cancel_request",
+  kind: "basic",
+  name: "BasicEventCancelRequestFlow",
+  step: [
+    {
+      input: {
+        ref: "event_cancel_request_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicEventCancelRequestFlow"
+}

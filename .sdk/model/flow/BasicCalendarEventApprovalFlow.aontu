@@ -1,0 +1,18 @@
+# BasicCalendarEventApprovalFlow
+
+main: kit: flow: BasicCalendarEventApprovalFlow:
+{
+  entity: "calendar_event_approval",
+  kind: "basic",
+  name: "BasicCalendarEventApprovalFlow",
+  step: [
+    {
+      input: {
+        ref: "calendar_event_approval_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicCalendarEventApprovalFlow"
+}

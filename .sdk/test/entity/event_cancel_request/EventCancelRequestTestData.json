@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "event_cancel_request": {
+      "EVENT_CANCEL_REQUEST00": {
+        "cancellation_token": "s28",
+        "event_id": "EVENT01",
+        "guest_count": 42,
+        "is_paid": false,
+        "id": "EVENT_CANCEL_REQUEST00"
+      },
+      "EVENT_CANCEL_REQUEST01": {
+        "cancellation_token": "s50",
+        "event_id": "EVENT01",
+        "guest_count": 82,
+        "is_paid": false,
+        "id": "EVENT_CANCEL_REQUEST01"
+      },
+      "EVENT_CANCEL_REQUEST02": {
+        "cancellation_token": "s78",
+        "event_id": "EVENT01",
+        "guest_count": 122,
+        "is_paid": false,
+        "id": "EVENT_CANCEL_REQUEST02"
+      }
+    }
+  },
+  "new": {
+    "event_cancel_request": {
+      "event_cancel_request_ref01": {
+        "cancellation_token": "sa0",
+        "event_id": "EVENT01",
+        "guest_count": 162,
+        "is_paid": false
+      }
+    }
+  }
+}

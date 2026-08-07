@@ -1,0 +1,323 @@
+# Guide - hand-authored entity map for the Luma API.
+#
+# The apidef heuristic groups operations by OpenAPI tag. Luma declares only six
+# tags across 66 operations and puts the verb in the path (/v1/events/create)
+# rather than using REST methods on templated paths, so the heuristic collapsed
+# all 66 operations into 14 CRUD slots and picked the wrong endpoint for the
+# common ones - Event().create() resolved to POST /v1/events/cancel/request.
+#
+# This file replaces that mapping with an explicit path-derived one: 31 entities,
+# one operation per (entity, op) slot, all 66 operations reachable and correct.
+# It deliberately does NOT include base-guide.aontu.
+
+@"@voxgig/apidef/model/guide.aontu"
+
+guide: {
+
+  entity: event: {
+    path: "/v1/events/create": {
+      op: create: method: POST
+    }
+    path: "/v1/events/get": {
+      op: load: method: GET
+    }
+    path: "/v1/events/update": {
+      op: update: method: POST
+    }
+    path: "/v1/events/cancel": {
+      op: remove: method: POST
+    }
+  }
+
+  entity: event_cancel_request: {
+    path: "/v1/events/cancel/request": {
+      op: create: method: POST
+    }
+  }
+
+  entity: guest: {
+    path: "/v1/events/guests/add": {
+      op: create: method: POST
+    }
+    path: "/v1/events/guests/get": {
+      op: load: method: GET
+    }
+    path: "/v1/events/guests/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/events/guests/update-status": {
+      op: update: method: POST
+    }
+  }
+
+  entity: guest_ticket: {
+    path: "/v1/events/guests/update-tickets": {
+      op: update: method: POST
+    }
+  }
+
+  entity: guest_invite: {
+    path: "/v1/events/guests/send-invites": {
+      op: create: method: POST
+    }
+  }
+
+  entity: host: {
+    path: "/v1/events/hosts/add": {
+      op: create: method: POST
+    }
+    path: "/v1/events/hosts/update": {
+      op: update: method: POST
+    }
+    path: "/v1/events/hosts/remove": {
+      op: remove: method: POST
+    }
+  }
+
+  entity: ticket_type: {
+    path: "/v1/events/ticket-types/create": {
+      op: create: method: POST
+    }
+    path: "/v1/events/ticket-types/get": {
+      op: load: method: GET
+    }
+    path: "/v1/events/ticket-types/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/events/ticket-types/update": {
+      op: update: method: POST
+    }
+    path: "/v1/events/ticket-types/delete": {
+      op: remove: method: POST
+    }
+  }
+
+  entity: event_coupon: {
+    path: "/v1/events/coupons/create": {
+      op: create: method: POST
+    }
+    path: "/v1/events/coupons/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/events/coupons/update": {
+      op: update: method: POST
+    }
+  }
+
+  entity: calendar: {
+    path: "/v1/calendars/get": {
+      op: load: method: GET
+    }
+    path: "/v1/calendars/update": {
+      op: update: method: POST
+    }
+  }
+
+  entity: calendar_event: {
+    path: "/v1/calendars/events/add": {
+      op: create: method: POST
+    }
+    path: "/v1/calendars/events/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/calendars/events/lookup": {
+      op: load: method: GET
+      op: load: transform: res: *("`body.event`")|top
+    }
+  }
+
+  entity: calendar_event_approval: {
+    path: "/v1/calendars/events/approve": {
+      op: create: method: POST
+    }
+  }
+
+  entity: calendar_event_rejection: {
+    path: "/v1/calendars/events/reject": {
+      op: create: method: POST
+    }
+  }
+
+  entity: contact: {
+    path: "/v1/calendars/contacts/import": {
+      op: create: method: POST
+    }
+    path: "/v1/calendars/contacts/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/calendars/contacts/remove": {
+      op: remove: method: POST
+    }
+  }
+
+  entity: contact_block: {
+    path: "/v1/calendars/contacts/block": {
+      op: create: method: POST
+    }
+  }
+
+  entity: contact_restore: {
+    path: "/v1/calendars/contacts/restore": {
+      op: create: method: POST
+    }
+  }
+
+  entity: contact_tag: {
+    path: "/v1/calendars/contact-tags/create": {
+      op: create: method: POST
+    }
+    path: "/v1/calendars/contact-tags/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/calendars/contact-tags/update": {
+      op: update: method: POST
+    }
+    path: "/v1/calendars/contact-tags/delete": {
+      op: remove: method: POST
+    }
+  }
+
+  entity: contact_tag_assignment: {
+    path: "/v1/calendars/contact-tags/apply": {
+      op: create: method: POST
+    }
+    path: "/v1/calendars/contact-tags/unapply": {
+      op: remove: method: POST
+    }
+  }
+
+  entity: event_tag: {
+    path: "/v1/calendars/event-tags/create": {
+      op: create: method: POST
+    }
+    path: "/v1/calendars/event-tags/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/calendars/event-tags/update": {
+      op: update: method: POST
+    }
+    path: "/v1/calendars/event-tags/delete": {
+      op: remove: method: POST
+    }
+  }
+
+  entity: event_tag_assignment: {
+    path: "/v1/calendars/event-tags/apply": {
+      op: create: method: POST
+    }
+    path: "/v1/calendars/event-tags/unapply": {
+      op: remove: method: POST
+    }
+  }
+
+  entity: calendar_coupon: {
+    path: "/v1/calendars/coupons/create": {
+      op: create: method: POST
+    }
+    path: "/v1/calendars/coupons/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/calendars/coupons/update": {
+      op: update: method: POST
+    }
+  }
+
+  entity: calendar_admin: {
+    path: "/v1/calendars/admins/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+  }
+
+  entity: membership_tier: {
+    path: "/v1/memberships/tiers/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+  }
+
+  entity: member: {
+    path: "/v1/memberships/members/add": {
+      op: create: method: POST
+    }
+    path: "/v1/memberships/members/update-status": {
+      op: update: method: POST
+    }
+  }
+
+  entity: webhook: {
+    path: "/v2/webhooks/create": {
+      op: create: method: POST
+    }
+    path: "/v2/webhooks/get": {
+      op: load: method: GET
+    }
+    path: "/v1/webhooks/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v2/webhooks/update": {
+      op: update: method: POST
+    }
+    path: "/v1/webhooks/delete": {
+      op: remove: method: POST
+    }
+  }
+
+  entity: organization_admin: {
+    path: "/v1/organizations/admins/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+  }
+
+  entity: organization_calendar: {
+    path: "/v2/organizations/calendars/create": {
+      op: create: method: POST
+    }
+    path: "/v1/organizations/calendars/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+  }
+
+  entity: organization_event: {
+    path: "/v1/organizations/events/list": {
+      op: list: method: GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+  }
+
+  entity: organization_event_transfer: {
+    path: "/v1/organizations/events/transfer-calendar": {
+      op: create: method: POST
+    }
+  }
+
+  entity: user: {
+    path: "/v1/users/get-self": {
+      op: load: method: GET
+    }
+  }
+
+  entity: image_upload: {
+    path: "/v1/images/create-upload-url": {
+      op: create: method: POST
+    }
+  }
+
+  entity: entity_lookup: {
+    path: "/v1/entities/lookup": {
+      op: load: method: GET
+      op: load: transform: res: *("`body.entity`")|top
+    }
+  }
+}

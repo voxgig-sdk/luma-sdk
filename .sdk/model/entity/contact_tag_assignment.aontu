@@ -1,0 +1,79 @@
+# Entity: contact_tag_assignment
+
+main: kit: entity: contact_tag_assignment: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "applied_count"
+      req: true
+      type: "`$NUMBER`"
+    }
+    {
+      name: "email"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "skipped_count"
+      req: true
+      type: "`$NUMBER`"
+    }
+    {
+      name: "tag"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "user_id"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "contact_tag_assignment"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/contact-tags/apply"
+          parts: [
+            "v1"
+            "calendars"
+            "contact-tags"
+            "apply"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/contact-tags/unapply"
+          parts: [
+            "v1"
+            "calendars"
+            "contact-tags"
+            "unapply"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

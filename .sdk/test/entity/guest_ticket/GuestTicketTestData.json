@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "guest_ticket": {
+      "GUEST_TICKET00": {
+        "event_id": "EVENT01",
+        "guest_id": "GUEST01",
+        "send_email": "s34",
+        "ticket_ids_to_remove": [],
+        "tickets_to_add": [],
+        "id": "GUEST_TICKET00"
+      },
+      "GUEST_TICKET01": {
+        "event_id": "EVENT01",
+        "guest_id": "GUEST01",
+        "send_email": "s66",
+        "ticket_ids_to_remove": [],
+        "tickets_to_add": [],
+        "id": "GUEST_TICKET01"
+      },
+      "GUEST_TICKET02": {
+        "event_id": "EVENT01",
+        "guest_id": "GUEST01",
+        "send_email": "s98",
+        "ticket_ids_to_remove": [],
+        "tickets_to_add": [],
+        "id": "GUEST_TICKET02"
+      }
+    }
+  },
+  "new": {
+    "guest_ticket": {
+      "guest_ticket_ref01": {
+        "event_id": "EVENT01",
+        "guest_id": "GUEST01",
+        "send_email": "sca",
+        "ticket_ids_to_remove": [],
+        "tickets_to_add": []
+      }
+    }
+  }
+}

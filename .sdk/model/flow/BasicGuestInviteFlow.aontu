@@ -1,0 +1,18 @@
+# BasicGuestInviteFlow
+
+main: kit: flow: BasicGuestInviteFlow:
+{
+  entity: "guest_invite",
+  kind: "basic",
+  name: "BasicGuestInviteFlow",
+  step: [
+    {
+      input: {
+        ref: "guest_invite_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicGuestInviteFlow"
+}

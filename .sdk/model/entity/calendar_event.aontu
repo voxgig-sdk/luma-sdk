@@ -1,0 +1,218 @@
+# Entity: calendar_event
+
+main: kit: entity: calendar_event: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "submitted_by"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "tag"
+      req: true
+      type: "`$ARRAY`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "calendar_event"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/events/add"
+          parts: [
+            "v1"
+            "calendars"
+            "events"
+            "add"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "access"
+                orig: "access"
+                reqd: false
+                type: "`$ARRAY`"
+              }
+              {
+                kind: "query"
+                name: "after"
+                orig: "after"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "before"
+                orig: "before"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_cursor"
+                orig: "pagination_cursor"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_limit"
+                orig: "pagination_limit"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                kind: "query"
+                name: "platform"
+                orig: "platform"
+                reqd: false
+                type: "`$ARRAY`"
+              }
+              {
+                kind: "query"
+                name: "sort_column"
+                orig: "sort_column"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sort_direction"
+                orig: "sort_direction"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "status"
+                orig: "status"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/calendars/events/list"
+          parts: [
+            "v1"
+            "calendars"
+            "events"
+            "list"
+          ]
+          select: {
+            exist: [
+              "access"
+              "after"
+              "before"
+              "pagination_cursor"
+              "pagination_limit"
+              "platform"
+              "sort_column"
+              "sort_direction"
+              "status"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "event_api_id"
+                orig: "event_api_id"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "event_id"
+                orig: "event_id"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "platform"
+                orig: "platform"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "url"
+                orig: "url"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/calendars/events/lookup"
+          parts: [
+            "v1"
+            "calendars"
+            "events"
+            "lookup"
+          ]
+          select: {
+            exist: [
+              "event_api_id"
+              "event_id"
+              "platform"
+              "url"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.event`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,30 @@
+# BasicOrganizationCalendarFlow
+
+main: kit: flow: BasicOrganizationCalendarFlow:
+{
+  entity: "organization_calendar",
+  kind: "basic",
+  name: "BasicOrganizationCalendarFlow",
+  step: [
+    {
+      input: {
+        ref: "organization_calendar_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "organization_calendar_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOrganizationCalendarFlow"
+}

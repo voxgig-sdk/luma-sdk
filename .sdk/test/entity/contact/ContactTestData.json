@@ -1,0 +1,73 @@
+{
+  "existing": {
+    "contact": {
+      "CONTACT00": {
+        "avatar_url": "s8c",
+        "contact": [],
+        "created_at": "s8e",
+        "email": "s8f",
+        "event_approved_count": 144,
+        "event_checked_in_count": 145,
+        "first_name": "s92",
+        "id": "CONTACT00",
+        "last_name": "s94",
+        "membership": "s95",
+        "name": "s96",
+        "revenue_usd_cent": 151,
+        "tag": "s98",
+        "user_id": "USER01"
+      },
+      "CONTACT01": {
+        "avatar_url": "s118",
+        "contact": [],
+        "created_at": "s11a",
+        "email": "s11b",
+        "event_approved_count": 284,
+        "event_checked_in_count": 285,
+        "first_name": "s11e",
+        "id": "CONTACT01",
+        "last_name": "s120",
+        "membership": "s121",
+        "name": "s122",
+        "revenue_usd_cent": 291,
+        "tag": "s124",
+        "user_id": "USER01"
+      },
+      "CONTACT02": {
+        "avatar_url": "s1a4",
+        "contact": [],
+        "created_at": "s1a6",
+        "email": "s1a7",
+        "event_approved_count": 424,
+        "event_checked_in_count": 425,
+        "first_name": "s1aa",
+        "id": "CONTACT02",
+        "last_name": "s1ac",
+        "membership": "s1ad",
+        "name": "s1ae",
+        "revenue_usd_cent": 431,
+        "tag": "s1b0",
+        "user_id": "USER01"
+      }
+    }
+  },
+  "new": {
+    "contact": {
+      "contact_ref01": {
+        "avatar_url": "s230",
+        "contact": [],
+        "created_at": "s232",
+        "email": "s233",
+        "event_approved_count": 564,
+        "event_checked_in_count": 565,
+        "first_name": "s236",
+        "last_name": "s238",
+        "membership": "s239",
+        "name": "s23a",
+        "revenue_usd_cent": 571,
+        "tag": "s23c",
+        "user_id": "USER01"
+      }
+    }
+  }
+}

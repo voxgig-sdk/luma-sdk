@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "contact_tag_assignment": {
+      "CONTACT_TAG_ASSIGNMENT00": {
+        "applied_count": 50,
+        "email": [],
+        "skipped_count": 52,
+        "tag": "s35",
+        "user_id": "USER01",
+        "id": "CONTACT_TAG_ASSIGNMENT00"
+      },
+      "CONTACT_TAG_ASSIGNMENT01": {
+        "applied_count": 100,
+        "email": [],
+        "skipped_count": 102,
+        "tag": "s67",
+        "user_id": "USER01",
+        "id": "CONTACT_TAG_ASSIGNMENT01"
+      },
+      "CONTACT_TAG_ASSIGNMENT02": {
+        "applied_count": 150,
+        "email": [],
+        "skipped_count": 152,
+        "tag": "s99",
+        "user_id": "USER01",
+        "id": "CONTACT_TAG_ASSIGNMENT02"
+      }
+    }
+  },
+  "new": {
+    "contact_tag_assignment": {
+      "contact_tag_assignment_ref01": {
+        "applied_count": 200,
+        "email": [],
+        "skipped_count": 202,
+        "tag": "scb",
+        "user_id": "USER01"
+      }
+    }
+  }
+}

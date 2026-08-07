@@ -1,0 +1,45 @@
+# Entity: contact_restore
+
+main: kit: entity: contact_restore: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "contact_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "email"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "contact_restore"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/contacts/restore"
+          parts: [
+            "v1"
+            "calendars"
+            "contacts"
+            "restore"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

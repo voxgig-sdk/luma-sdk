@@ -1,0 +1,1172 @@
+-- Typed models for the Luma SDK (LuaLS annotations).
+--
+-- GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+-- params (op.<name>.points[].args.params[]). Field/param types come from the
+-- canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+-- @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
+-- edit by hand.
+
+---@class Calendar
+---@field avatar_url any
+---@field calendar_id string
+---@field coordinate any
+---@field cover_image_url any
+---@field description string
+---@field id string
+---@field instagram_handle any
+---@field is_personal boolean
+---@field location any
+---@field name string
+---@field slug string
+---@field social_image_url any
+---@field tint_color? string
+---@field twitter_handle any
+---@field url string
+---@field website any
+---@field youtube_handle any
+
+---@class CalendarLoadMatch
+---@field avatar_url? any
+---@field calendar_id? string
+---@field coordinate? any
+---@field cover_image_url? any
+---@field description? string
+---@field id string
+---@field instagram_handle? any
+---@field is_personal? boolean
+---@field location? any
+---@field name? string
+---@field slug? string
+---@field social_image_url? any
+---@field tint_color? string
+---@field twitter_handle? any
+---@field url? string
+---@field website? any
+---@field youtube_handle? any
+
+---@class CalendarUpdateData
+---@field avatar_url? any
+---@field calendar_id? string
+---@field coordinate? any
+---@field cover_image_url? any
+---@field description? string
+---@field id? string
+---@field instagram_handle? any
+---@field is_personal? boolean
+---@field location? any
+---@field name? string
+---@field slug? string
+---@field social_image_url? any
+---@field tint_color? string
+---@field twitter_handle? any
+---@field url? string
+---@field website? any
+---@field youtube_handle? any
+
+---@class CalendarAdmin
+---@field avatar_url string
+---@field email string
+---@field first_name any
+---@field id string
+---@field last_name any
+---@field name string
+
+---@class CalendarAdminListMatch
+---@field avatar_url? string
+---@field email? string
+---@field first_name? any
+---@field id? string
+---@field last_name? any
+---@field name? string
+
+---@class CalendarCoupon
+---@field cents_off any
+---@field code string
+---@field currency any
+---@field discount any
+---@field event_ticket_type_id? string
+---@field id string
+---@field percent_off any
+---@field remaining_count number
+---@field valid_end_at any
+---@field valid_start_at any
+
+---@class CalendarCouponListMatch
+---@field cents_off? any
+---@field code? string
+---@field currency? any
+---@field discount? any
+---@field event_ticket_type_id? string
+---@field id? string
+---@field percent_off? any
+---@field remaining_count? number
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class CalendarCouponCreateData
+---@field cents_off any
+---@field code string
+---@field currency any
+---@field discount any
+---@field event_ticket_type_id? string
+---@field id string
+---@field percent_off any
+---@field remaining_count number
+---@field valid_end_at any
+---@field valid_start_at any
+
+---@class CalendarCouponUpdateData
+---@field cents_off? any
+---@field code? string
+---@field currency? any
+---@field discount? any
+---@field event_ticket_type_id? string
+---@field id? string
+---@field percent_off? any
+---@field remaining_count? number
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class CalendarEvent
+---@field id string
+---@field status string
+---@field submitted_by any
+---@field tag table
+
+---@class CalendarEventLoadMatch
+---@field id string
+---@field status? string
+---@field submitted_by? any
+---@field tag? table
+
+---@class CalendarEventListMatch
+---@field id? string
+---@field status? string
+---@field submitted_by? any
+---@field tag? table
+
+---@class CalendarEventCreateData
+---@field id string
+---@field status string
+---@field submitted_by any
+---@field tag table
+
+---@class CalendarEventApproval
+---@field calendar_event_id string
+
+---@class CalendarEventApprovalCreateData
+---@field calendar_event_id string
+
+---@class CalendarEventRejection
+---@field calendar_event_id string
+---@field message? string
+
+---@class CalendarEventRejectionCreateData
+---@field calendar_event_id string
+---@field message? string
+
+---@class Contact
+---@field avatar_url string
+---@field contact table
+---@field created_at string
+---@field email string
+---@field event_approved_count number
+---@field event_checked_in_count number
+---@field first_name any
+---@field id string
+---@field last_name any
+---@field membership any
+---@field name string
+---@field revenue_usd_cent number
+---@field tag? any
+---@field user_id string
+
+---@class ContactListMatch
+---@field avatar_url? string
+---@field contact? table
+---@field created_at? string
+---@field email? string
+---@field event_approved_count? number
+---@field event_checked_in_count? number
+---@field first_name? any
+---@field id? string
+---@field last_name? any
+---@field membership? any
+---@field name? string
+---@field revenue_usd_cent? number
+---@field tag? any
+---@field user_id? string
+
+---@class ContactCreateData
+---@field avatar_url string
+---@field contact table
+---@field created_at string
+---@field email string
+---@field event_approved_count number
+---@field event_checked_in_count number
+---@field first_name any
+---@field id string
+---@field last_name any
+---@field membership any
+---@field name string
+---@field revenue_usd_cent number
+---@field tag? any
+---@field user_id string
+
+---@class ContactRemoveMatch
+---@field avatar_url? string
+---@field contact? table
+---@field created_at? string
+---@field email? string
+---@field event_approved_count? number
+---@field event_checked_in_count? number
+---@field first_name? any
+---@field id string
+---@field last_name? any
+---@field membership? any
+---@field name? string
+---@field revenue_usd_cent? number
+---@field tag? any
+---@field user_id? string
+
+---@class ContactBlock
+---@field contact_id? string
+---@field email? string
+
+---@class ContactBlockCreateData
+---@field contact_id? string
+---@field email? string
+
+---@class ContactRestore
+---@field contact_id? string
+---@field email? string
+
+---@class ContactRestoreCreateData
+---@field contact_id? string
+---@field email? string
+
+---@class ContactTag
+---@field color? any
+---@field id string
+---@field name string
+---@field tag_id string
+
+---@class ContactTagListMatch
+---@field color? any
+---@field id? string
+---@field name? string
+---@field tag_id? string
+
+---@class ContactTagCreateData
+---@field color? any
+---@field id string
+---@field name string
+---@field tag_id string
+
+---@class ContactTagUpdateData
+---@field color? any
+---@field id? string
+---@field name? string
+---@field tag_id? string
+
+---@class ContactTagRemoveMatch
+---@field color? any
+---@field id string
+---@field name? string
+---@field tag_id? string
+
+---@class ContactTagAssignment
+---@field applied_count number
+---@field email? table
+---@field skipped_count number
+---@field tag string
+---@field user_id? table
+
+---@class ContactTagAssignmentCreateData
+---@field applied_count number
+---@field email? table
+---@field skipped_count number
+---@field tag string
+---@field user_id? table
+
+---@class ContactTagAssignmentRemoveMatch
+---@field applied_count? number
+---@field email? table
+---@field skipped_count? number
+---@field tag? string
+---@field user_id? table
+
+---@class EntityLookup
+
+---@class EntityLookupLoadMatch
+
+---@class Event
+---@field access string
+---@field calendar_id string
+---@field can_register_for_multiple_ticket? boolean
+---@field coordinate any
+---@field cover_url string
+---@field created_at string
+---@field description string
+---@field description_md string
+---@field display_price any
+---@field duration_interval string
+---@field end_at string
+---@field event_id string
+---@field feedback_email table
+---@field geo_address_json any
+---@field guest_count table
+---@field host table
+---@field id string
+---@field location_type string
+---@field location_visibility string
+---@field max_capacity? any
+---@field meeting_url any
+---@field name string
+---@field name_requirement? string
+---@field phone_number_requirement? any
+---@field platform string
+---@field registration_open boolean
+---@field registration_question? table
+---@field reminders_disabled? boolean
+---@field require_approval boolean
+---@field show_guest_list? boolean
+---@field slug? string
+---@field spots_remaining any
+---@field start_at string
+---@field suppress_notification? boolean
+---@field timezone string
+---@field tint_color? string
+---@field url string
+---@field user_id string
+---@field visibility string
+---@field waitlist_status string
+
+---@class EventLoadMatch
+---@field access? string
+---@field calendar_id? string
+---@field can_register_for_multiple_ticket? boolean
+---@field coordinate? any
+---@field cover_url? string
+---@field created_at? string
+---@field description? string
+---@field description_md? string
+---@field display_price? any
+---@field duration_interval? string
+---@field end_at? string
+---@field event_id? string
+---@field feedback_email? table
+---@field geo_address_json? any
+---@field guest_count? table
+---@field host? table
+---@field id string
+---@field location_type? string
+---@field location_visibility? string
+---@field max_capacity? any
+---@field meeting_url? any
+---@field name? string
+---@field name_requirement? string
+---@field phone_number_requirement? any
+---@field platform? string
+---@field registration_open? boolean
+---@field registration_question? table
+---@field reminders_disabled? boolean
+---@field require_approval? boolean
+---@field show_guest_list? boolean
+---@field slug? string
+---@field spots_remaining? any
+---@field start_at? string
+---@field suppress_notification? boolean
+---@field timezone? string
+---@field tint_color? string
+---@field url? string
+---@field user_id? string
+---@field visibility? string
+---@field waitlist_status? string
+
+---@class EventCreateData
+---@field access string
+---@field calendar_id string
+---@field can_register_for_multiple_ticket? boolean
+---@field coordinate any
+---@field cover_url string
+---@field created_at string
+---@field description string
+---@field description_md string
+---@field display_price any
+---@field duration_interval string
+---@field end_at string
+---@field event_id string
+---@field feedback_email table
+---@field geo_address_json any
+---@field guest_count table
+---@field host table
+---@field id string
+---@field location_type string
+---@field location_visibility string
+---@field max_capacity? any
+---@field meeting_url any
+---@field name string
+---@field name_requirement? string
+---@field phone_number_requirement? any
+---@field platform string
+---@field registration_open boolean
+---@field registration_question? table
+---@field reminders_disabled? boolean
+---@field require_approval boolean
+---@field show_guest_list? boolean
+---@field slug? string
+---@field spots_remaining any
+---@field start_at string
+---@field suppress_notification? boolean
+---@field timezone string
+---@field tint_color? string
+---@field url string
+---@field user_id string
+---@field visibility string
+---@field waitlist_status string
+
+---@class EventUpdateData
+---@field access? string
+---@field calendar_id? string
+---@field can_register_for_multiple_ticket? boolean
+---@field coordinate? any
+---@field cover_url? string
+---@field created_at? string
+---@field description? string
+---@field description_md? string
+---@field display_price? any
+---@field duration_interval? string
+---@field end_at? string
+---@field event_id? string
+---@field feedback_email? table
+---@field geo_address_json? any
+---@field guest_count? table
+---@field host? table
+---@field id? string
+---@field location_type? string
+---@field location_visibility? string
+---@field max_capacity? any
+---@field meeting_url? any
+---@field name? string
+---@field name_requirement? string
+---@field phone_number_requirement? any
+---@field platform? string
+---@field registration_open? boolean
+---@field registration_question? table
+---@field reminders_disabled? boolean
+---@field require_approval? boolean
+---@field show_guest_list? boolean
+---@field slug? string
+---@field spots_remaining? any
+---@field start_at? string
+---@field suppress_notification? boolean
+---@field timezone? string
+---@field tint_color? string
+---@field url? string
+---@field user_id? string
+---@field visibility? string
+---@field waitlist_status? string
+
+---@class EventRemoveMatch
+---@field access? string
+---@field calendar_id? string
+---@field can_register_for_multiple_ticket? boolean
+---@field coordinate? any
+---@field cover_url? string
+---@field created_at? string
+---@field description? string
+---@field description_md? string
+---@field display_price? any
+---@field duration_interval? string
+---@field end_at? string
+---@field event_id? string
+---@field feedback_email? table
+---@field geo_address_json? any
+---@field guest_count? table
+---@field host? table
+---@field id string
+---@field location_type? string
+---@field location_visibility? string
+---@field max_capacity? any
+---@field meeting_url? any
+---@field name? string
+---@field name_requirement? string
+---@field phone_number_requirement? any
+---@field platform? string
+---@field registration_open? boolean
+---@field registration_question? table
+---@field reminders_disabled? boolean
+---@field require_approval? boolean
+---@field show_guest_list? boolean
+---@field slug? string
+---@field spots_remaining? any
+---@field start_at? string
+---@field suppress_notification? boolean
+---@field timezone? string
+---@field tint_color? string
+---@field url? string
+---@field user_id? string
+---@field visibility? string
+---@field waitlist_status? string
+
+---@class EventCancelRequest
+---@field cancellation_token string
+---@field event_id string
+---@field guest_count number
+---@field is_paid boolean
+
+---@class EventCancelRequestCreateData
+---@field cancellation_token string
+---@field event_id string
+---@field guest_count number
+---@field is_paid boolean
+
+---@class EventCoupon
+---@field cents_off any
+---@field code string
+---@field currency any
+---@field discount any
+---@field event_id string
+---@field event_ticket_type_id? string
+---@field id string
+---@field percent_off any
+---@field remaining_count number
+---@field valid_end_at any
+---@field valid_start_at any
+
+---@class EventCouponListMatch
+---@field cents_off? any
+---@field code? string
+---@field currency? any
+---@field discount? any
+---@field event_id? string
+---@field event_ticket_type_id? string
+---@field id? string
+---@field percent_off? any
+---@field remaining_count? number
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class EventCouponCreateData
+---@field cents_off any
+---@field code string
+---@field currency any
+---@field discount any
+---@field event_id string
+---@field event_ticket_type_id? string
+---@field id string
+---@field percent_off any
+---@field remaining_count number
+---@field valid_end_at any
+---@field valid_start_at any
+
+---@class EventCouponUpdateData
+---@field cents_off? any
+---@field code? string
+---@field currency? any
+---@field discount? any
+---@field event_id? string
+---@field event_ticket_type_id? string
+---@field id? string
+---@field percent_off? any
+---@field remaining_count? number
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class EventTag
+---@field color? any
+---@field id string
+---@field name string
+---@field tag_id string
+
+---@class EventTagListMatch
+---@field color? any
+---@field id? string
+---@field name? string
+---@field tag_id? string
+
+---@class EventTagCreateData
+---@field color? any
+---@field id string
+---@field name string
+---@field tag_id string
+
+---@class EventTagUpdateData
+---@field color? any
+---@field id? string
+---@field name? string
+---@field tag_id? string
+
+---@class EventTagRemoveMatch
+---@field color? any
+---@field id string
+---@field name? string
+---@field tag_id? string
+
+---@class EventTagAssignment
+---@field applied_count number
+---@field event_id table
+---@field skipped_count number
+---@field tag string
+
+---@class EventTagAssignmentCreateData
+---@field applied_count number
+---@field event_id table
+---@field skipped_count number
+---@field tag string
+
+---@class EventTagAssignmentRemoveMatch
+---@field applied_count? number
+---@field event_id? table
+---@field skipped_count? number
+---@field tag? string
+
+---@class Guest
+---@field approval_status string
+---@field check_in_qr_code string
+---@field eth_address any
+---@field event_id string
+---@field event_ticket table
+---@field event_ticket_order table
+---@field guest table
+---@field guest_id string
+---@field id string
+---@field invited_at any
+---@field joined_at any
+---@field message? any
+---@field phone_number number
+---@field registered_at any
+---@field registration_answer any
+---@field send_email? any
+---@field should_refund? boolean
+---@field solana_address any
+---@field status string
+---@field ticket? any
+---@field user_email string
+---@field user_first_name any
+---@field user_id string
+---@field user_last_name any
+---@field user_name any
+---@field utm_source any
+
+---@class GuestLoadMatch
+---@field approval_status? string
+---@field check_in_qr_code? string
+---@field eth_address? any
+---@field event_id? string
+---@field event_ticket? table
+---@field event_ticket_order? table
+---@field guest? table
+---@field guest_id? string
+---@field id string
+---@field invited_at? any
+---@field joined_at? any
+---@field message? any
+---@field phone_number? number
+---@field registered_at? any
+---@field registration_answer? any
+---@field send_email? any
+---@field should_refund? boolean
+---@field solana_address? any
+---@field status? string
+---@field ticket? any
+---@field user_email? string
+---@field user_first_name? any
+---@field user_id? string
+---@field user_last_name? any
+---@field user_name? any
+---@field utm_source? any
+
+---@class GuestListMatch
+---@field approval_status? string
+---@field check_in_qr_code? string
+---@field eth_address? any
+---@field event_id? string
+---@field event_ticket? table
+---@field event_ticket_order? table
+---@field guest? table
+---@field guest_id? string
+---@field id? string
+---@field invited_at? any
+---@field joined_at? any
+---@field message? any
+---@field phone_number? number
+---@field registered_at? any
+---@field registration_answer? any
+---@field send_email? any
+---@field should_refund? boolean
+---@field solana_address? any
+---@field status? string
+---@field ticket? any
+---@field user_email? string
+---@field user_first_name? any
+---@field user_id? string
+---@field user_last_name? any
+---@field user_name? any
+---@field utm_source? any
+
+---@class GuestCreateData
+---@field approval_status string
+---@field check_in_qr_code string
+---@field eth_address any
+---@field event_id string
+---@field event_ticket table
+---@field event_ticket_order table
+---@field guest table
+---@field guest_id string
+---@field id string
+---@field invited_at any
+---@field joined_at any
+---@field message? any
+---@field phone_number number
+---@field registered_at any
+---@field registration_answer any
+---@field send_email? any
+---@field should_refund? boolean
+---@field solana_address any
+---@field status string
+---@field ticket? any
+---@field user_email string
+---@field user_first_name any
+---@field user_id string
+---@field user_last_name any
+---@field user_name any
+---@field utm_source any
+
+---@class GuestUpdateData
+---@field approval_status? string
+---@field check_in_qr_code? string
+---@field eth_address? any
+---@field event_id? string
+---@field event_ticket? table
+---@field event_ticket_order? table
+---@field guest? table
+---@field guest_id? string
+---@field id? string
+---@field invited_at? any
+---@field joined_at? any
+---@field message? any
+---@field phone_number? number
+---@field registered_at? any
+---@field registration_answer? any
+---@field send_email? any
+---@field should_refund? boolean
+---@field solana_address? any
+---@field status? string
+---@field ticket? any
+---@field user_email? string
+---@field user_first_name? any
+---@field user_id? string
+---@field user_last_name? any
+---@field user_name? any
+---@field utm_source? any
+
+---@class GuestInvite
+---@field event_id string
+---@field guest table
+---@field message? any
+
+---@class GuestInviteCreateData
+---@field event_id string
+---@field guest table
+---@field message? any
+
+---@class GuestTicket
+---@field event_id string
+---@field guest_id string
+---@field send_email? any
+---@field ticket_ids_to_remove? table
+---@field tickets_to_add? table
+
+---@class GuestTicketUpdateData
+---@field event_id? string
+---@field guest_id? string
+---@field send_email? any
+---@field ticket_ids_to_remove? table
+---@field tickets_to_add? table
+
+---@class Host
+---@field access_level? any
+---@field email string
+---@field event_id string
+---@field is_visible? boolean
+---@field name? string
+
+---@class HostCreateData
+---@field access_level? any
+---@field email string
+---@field event_id string
+---@field is_visible? boolean
+---@field name? string
+
+---@class HostUpdateData
+---@field access_level? any
+---@field email? string
+---@field event_id? string
+---@field is_visible? boolean
+---@field name? string
+
+---@class HostRemoveMatch
+---@field access_level? any
+---@field email? string
+---@field event_id? string
+---@field is_visible? boolean
+---@field name? string
+
+---@class ImageUpload
+---@field content_type? any
+---@field file_url string
+---@field upload_url string
+
+---@class ImageUploadCreateData
+---@field content_type? any
+---@field file_url string
+---@field upload_url string
+
+---@class Member
+---@field email string
+---@field membership_id string
+---@field membership_tier_id string
+---@field registration_answer? table
+---@field skip_payment? boolean
+---@field status string
+---@field user_id string
+
+---@class MemberCreateData
+---@field email string
+---@field membership_id string
+---@field membership_tier_id string
+---@field registration_answer? table
+---@field skip_payment? boolean
+---@field status string
+---@field user_id string
+
+---@class MemberUpdateData
+---@field email? string
+---@field membership_id? string
+---@field membership_tier_id? string
+---@field registration_answer? table
+---@field skip_payment? boolean
+---@field status? string
+---@field user_id? string
+
+---@class MembershipTier
+---@field access_info any
+---@field description string
+---@field id string
+---@field name string
+---@field tint_color string
+
+---@class MembershipTierListMatch
+---@field access_info? any
+---@field description? string
+---@field id? string
+---@field name? string
+---@field tint_color? string
+
+---@class OrganizationAdmin
+---@field api_id string
+---@field avatar_url string
+---@field email string
+---@field first_name any
+---@field id string
+---@field last_name any
+---@field name string
+
+---@class OrganizationAdminListMatch
+---@field api_id? string
+---@field avatar_url? string
+---@field email? string
+---@field first_name? any
+---@field id? string
+---@field last_name? any
+---@field name? string
+
+---@class OrganizationCalendar
+---@field avatar_url any
+---@field coordinate any
+---@field cover_image_url any
+---@field description string
+---@field id string
+---@field instagram_handle any
+---@field is_personal boolean
+---@field location any
+---@field name string
+---@field slug string
+---@field social_image_url any
+---@field tint_color? string
+---@field twitter_handle any
+---@field url string
+---@field website any
+---@field youtube_handle any
+
+---@class OrganizationCalendarListMatch
+---@field avatar_url? any
+---@field coordinate? any
+---@field cover_image_url? any
+---@field description? string
+---@field id? string
+---@field instagram_handle? any
+---@field is_personal? boolean
+---@field location? any
+---@field name? string
+---@field slug? string
+---@field social_image_url? any
+---@field tint_color? string
+---@field twitter_handle? any
+---@field url? string
+---@field website? any
+---@field youtube_handle? any
+
+---@class OrganizationCalendarCreateData
+---@field avatar_url any
+---@field coordinate any
+---@field cover_image_url any
+---@field description string
+---@field id string
+---@field instagram_handle any
+---@field is_personal boolean
+---@field location any
+---@field name string
+---@field slug string
+---@field social_image_url any
+---@field tint_color? string
+---@field twitter_handle any
+---@field url string
+---@field website any
+---@field youtube_handle any
+
+---@class OrganizationEvent
+---@field api_id string
+---@field calendar_api_id string
+---@field calendar_id string
+---@field coordinate any
+---@field cover_url string
+---@field created_at string
+---@field display_price any
+---@field duration_interval string
+---@field end_at string
+---@field feedback_email table
+---@field geo_address_json any
+---@field geo_latitude any
+---@field geo_longitude any
+---@field id string
+---@field location_type string
+---@field location_visibility string
+---@field managing_calendar table
+---@field meeting_url any
+---@field name string
+---@field platform string
+---@field registration_open boolean
+---@field registration_question? table
+---@field require_approval boolean
+---@field spots_remaining any
+---@field start_at string
+---@field timezone string
+---@field url string
+---@field user_api_id string
+---@field user_id string
+---@field visibility string
+---@field waitlist_status string
+---@field zoom_meeting_url any
+
+---@class OrganizationEventListMatch
+---@field api_id? string
+---@field calendar_api_id? string
+---@field calendar_id? string
+---@field coordinate? any
+---@field cover_url? string
+---@field created_at? string
+---@field display_price? any
+---@field duration_interval? string
+---@field end_at? string
+---@field feedback_email? table
+---@field geo_address_json? any
+---@field geo_latitude? any
+---@field geo_longitude? any
+---@field id? string
+---@field location_type? string
+---@field location_visibility? string
+---@field managing_calendar? table
+---@field meeting_url? any
+---@field name? string
+---@field platform? string
+---@field registration_open? boolean
+---@field registration_question? table
+---@field require_approval? boolean
+---@field spots_remaining? any
+---@field start_at? string
+---@field timezone? string
+---@field url? string
+---@field user_api_id? string
+---@field user_id? string
+---@field visibility? string
+---@field waitlist_status? string
+---@field zoom_meeting_url? any
+
+---@class OrganizationEventTransfer
+---@field calendar_id string
+---@field event_id string
+
+---@class OrganizationEventTransferCreateData
+---@field calendar_id string
+---@field event_id string
+
+---@class TicketType
+---@field cent? any
+---@field currency? any
+---@field description? string
+---@field id string
+---@field is_flexible? boolean
+---@field is_hidden? boolean
+---@field max_capacity? any
+---@field min_cent? any
+---@field name string
+---@field require_approval? boolean
+---@field type string
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class TicketTypeLoadMatch
+---@field cent? any
+---@field currency? any
+---@field description? string
+---@field id string
+---@field is_flexible? boolean
+---@field is_hidden? boolean
+---@field max_capacity? any
+---@field min_cent? any
+---@field name? string
+---@field require_approval? boolean
+---@field type? string
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class TicketTypeListMatch
+---@field cent? any
+---@field currency? any
+---@field description? string
+---@field id? string
+---@field is_flexible? boolean
+---@field is_hidden? boolean
+---@field max_capacity? any
+---@field min_cent? any
+---@field name? string
+---@field require_approval? boolean
+---@field type? string
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class TicketTypeCreateData
+---@field cent? any
+---@field currency? any
+---@field description? string
+---@field id string
+---@field is_flexible? boolean
+---@field is_hidden? boolean
+---@field max_capacity? any
+---@field min_cent? any
+---@field name string
+---@field require_approval? boolean
+---@field type string
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class TicketTypeUpdateData
+---@field cent? any
+---@field currency? any
+---@field description? string
+---@field id? string
+---@field is_flexible? boolean
+---@field is_hidden? boolean
+---@field max_capacity? any
+---@field min_cent? any
+---@field name? string
+---@field require_approval? boolean
+---@field type? string
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class TicketTypeRemoveMatch
+---@field cent? any
+---@field currency? any
+---@field description? string
+---@field id string
+---@field is_flexible? boolean
+---@field is_hidden? boolean
+---@field max_capacity? any
+---@field min_cent? any
+---@field name? string
+---@field require_approval? boolean
+---@field type? string
+---@field valid_end_at? any
+---@field valid_start_at? any
+
+---@class User
+---@field avatar_url string
+---@field email string
+---@field first_name any
+---@field id string
+---@field last_name any
+---@field name string
+
+---@class UserLoadMatch
+---@field avatar_url? string
+---@field email? string
+---@field first_name? any
+---@field id string
+---@field last_name? any
+---@field name? string
+
+---@class Webhook
+---@field created_at string
+---@field event_type table
+---@field id string
+---@field secret string
+---@field status string
+---@field url string
+
+---@class WebhookLoadMatch
+---@field created_at? string
+---@field event_type? table
+---@field id string
+---@field secret? string
+---@field status? string
+---@field url? string
+
+---@class WebhookListMatch
+---@field created_at? string
+---@field event_type? table
+---@field id? string
+---@field secret? string
+---@field status? string
+---@field url? string
+
+---@class WebhookCreateData
+---@field created_at string
+---@field event_type table
+---@field id string
+---@field secret string
+---@field status string
+---@field url string
+
+---@class WebhookUpdateData
+---@field created_at? string
+---@field event_type? table
+---@field id? string
+---@field secret? string
+---@field status? string
+---@field url? string
+
+---@class WebhookRemoveMatch
+---@field created_at? string
+---@field event_type? table
+---@field id string
+---@field secret? string
+---@field status? string
+---@field url? string
+
+local M = {}
+
+return M

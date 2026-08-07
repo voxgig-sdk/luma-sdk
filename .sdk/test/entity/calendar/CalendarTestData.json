@@ -1,0 +1,85 @@
+{
+  "existing": {
+    "calendar": {
+      "CALENDAR00": {
+        "avatar_url": "saa",
+        "calendar_id": "CALENDAR01",
+        "coordinate": "sac",
+        "cover_image_url": "sad",
+        "description": "sae",
+        "id": "CALENDAR00",
+        "instagram_handle": "sb0",
+        "is_personal": false,
+        "location": "sb2",
+        "name": "sb3",
+        "slug": "sb4",
+        "social_image_url": "sb5",
+        "tint_color": "sb6",
+        "twitter_handle": "sb7",
+        "url": "sb8",
+        "website": "sb9",
+        "youtube_handle": "sba"
+      },
+      "CALENDAR01": {
+        "avatar_url": "s154",
+        "calendar_id": "CALENDAR01",
+        "coordinate": "s156",
+        "cover_image_url": "s157",
+        "description": "s158",
+        "id": "CALENDAR01",
+        "instagram_handle": "s15a",
+        "is_personal": false,
+        "location": "s15c",
+        "name": "s15d",
+        "slug": "s15e",
+        "social_image_url": "s15f",
+        "tint_color": "s160",
+        "twitter_handle": "s161",
+        "url": "s162",
+        "website": "s163",
+        "youtube_handle": "s164"
+      },
+      "CALENDAR02": {
+        "avatar_url": "s1fe",
+        "calendar_id": "CALENDAR01",
+        "coordinate": "s200",
+        "cover_image_url": "s201",
+        "description": "s202",
+        "id": "CALENDAR02",
+        "instagram_handle": "s204",
+        "is_personal": false,
+        "location": "s206",
+        "name": "s207",
+        "slug": "s208",
+        "social_image_url": "s209",
+        "tint_color": "s20a",
+        "twitter_handle": "s20b",
+        "url": "s20c",
+        "website": "s20d",
+        "youtube_handle": "s20e"
+      }
+    }
+  },
+  "new": {
+    "calendar": {
+      "calendar_ref01": {
+        "avatar_url": "s2a8",
+        "calendar_id": "CALENDAR01",
+        "coordinate": "s2aa",
+        "cover_image_url": "s2ab",
+        "description": "s2ac",
+        "instagram_handle": "s2ae",
+        "is_personal": false,
+        "location": "s2b0",
+        "name": "s2b1",
+        "slug": "s2b2",
+        "social_image_url": "s2b3",
+        "tint_color": "s2b4",
+        "twitter_handle": "s2b5",
+        "url": "s2b6",
+        "website": "s2b7",
+        "youtube_handle": "s2b8"
+      }
+    }
+  }
+}

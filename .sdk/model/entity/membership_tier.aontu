@@ -1,0 +1,89 @@
+# Entity: membership_tier
+
+main: kit: entity: membership_tier: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "access_info"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "description"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "tint_color"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "membership_tier"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "pagination_cursor"
+                orig: "pagination_cursor"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_limit"
+                orig: "pagination_limit"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/memberships/tiers/list"
+          parts: [
+            "v1"
+            "memberships"
+            "tiers"
+            "list"
+          ]
+          select: {
+            exist: [
+              "pagination_cursor"
+              "pagination_limit"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

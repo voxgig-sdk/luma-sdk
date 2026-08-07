@@ -1,0 +1,98 @@
+# Entity: host
+
+main: kit: entity: host: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "access_level"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "email"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "event_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "is_visible"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "host"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/hosts/add"
+          parts: [
+            "v1"
+            "events"
+            "hosts"
+            "add"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/hosts/remove"
+          parts: [
+            "v1"
+            "events"
+            "hosts"
+            "remove"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/hosts/update"
+          parts: [
+            "v1"
+            "events"
+            "hosts"
+            "update"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

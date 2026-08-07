@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "calendar_admin": {
+      "CALENDAR_ADMIN00": {
+        "avatar_url": "s3c",
+        "email": "s3d",
+        "first_name": "s3e",
+        "id": "CALENDAR_ADMIN00",
+        "last_name": "s40",
+        "name": "s41"
+      },
+      "CALENDAR_ADMIN01": {
+        "avatar_url": "s78",
+        "email": "s79",
+        "first_name": "s7a",
+        "id": "CALENDAR_ADMIN01",
+        "last_name": "s7c",
+        "name": "s7d"
+      },
+      "CALENDAR_ADMIN02": {
+        "avatar_url": "sb4",
+        "email": "sb5",
+        "first_name": "sb6",
+        "id": "CALENDAR_ADMIN02",
+        "last_name": "sb8",
+        "name": "sb9"
+      }
+    }
+  },
+  "new": {
+    "calendar_admin": {
+      "calendar_admin_ref01": {
+        "avatar_url": "sf0",
+        "email": "sf1",
+        "first_name": "sf2",
+        "last_name": "sf4",
+        "name": "sf5"
+      }
+    }
+  }
+}

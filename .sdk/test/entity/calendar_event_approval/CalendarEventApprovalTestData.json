@@ -1,0 +1,25 @@
+{
+  "existing": {
+    "calendar_event_approval": {
+      "CALENDAR_EVENT_APPROVAL00": {
+        "calendar_event_id": "CALENDAR_EVENT01",
+        "id": "CALENDAR_EVENT_APPROVAL00"
+      },
+      "CALENDAR_EVENT_APPROVAL01": {
+        "calendar_event_id": "CALENDAR_EVENT01",
+        "id": "CALENDAR_EVENT_APPROVAL01"
+      },
+      "CALENDAR_EVENT_APPROVAL02": {
+        "calendar_event_id": "CALENDAR_EVENT01",
+        "id": "CALENDAR_EVENT_APPROVAL02"
+      }
+    }
+  },
+  "new": {
+    "calendar_event_approval": {
+      "calendar_event_approval_ref01": {
+        "calendar_event_id": "CALENDAR_EVENT01"
+      }
+    }
+  }
+}

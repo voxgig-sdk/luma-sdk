@@ -1,0 +1,50 @@
+# Entity: guest_invite
+
+main: kit: entity: guest_invite: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "event_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "guest"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "message"
+      req: false
+      type: "`$ANY`"
+    }
+  ]
+
+  name: "guest_invite"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/guests/send-invites"
+          parts: [
+            "v1"
+            "events"
+            "guests"
+            "send-invites"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

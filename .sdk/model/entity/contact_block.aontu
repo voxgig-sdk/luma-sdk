@@ -1,0 +1,45 @@
+# Entity: contact_block
+
+main: kit: entity: contact_block: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "contact_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "email"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "contact_block"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/contacts/block"
+          parts: [
+            "v1"
+            "calendars"
+            "contacts"
+            "block"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

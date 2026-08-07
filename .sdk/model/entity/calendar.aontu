@@ -1,0 +1,166 @@
+# Entity: calendar
+
+main: kit: entity: calendar: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "avatar_url"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "calendar_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "coordinate"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "cover_image_url"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "description"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "instagram_handle"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "is_personal"
+      req: true
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "location"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "name"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "slug"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "social_image_url"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "tint_color"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "twitter_handle"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "url"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "website"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "youtube_handle"
+      req: true
+      type: "`$ANY`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "calendar"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/v1/calendars/get"
+          parts: [
+            "v1"
+            "calendars"
+            "get"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/update"
+          parts: [
+            "v1"
+            "calendars"
+            "update"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

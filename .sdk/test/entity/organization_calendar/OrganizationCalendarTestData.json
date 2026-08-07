@@ -1,0 +1,81 @@
+{
+  "existing": {
+    "organization_calendar": {
+      "ORGANIZATION_CALENDAR00": {
+        "avatar_url": "sa0",
+        "coordinate": "sa1",
+        "cover_image_url": "sa2",
+        "description": "sa3",
+        "id": "ORGANIZATION_CALENDAR00",
+        "instagram_handle": "sa5",
+        "is_personal": true,
+        "location": "sa7",
+        "name": "sa8",
+        "slug": "sa9",
+        "social_image_url": "saa",
+        "tint_color": "sab",
+        "twitter_handle": "sac",
+        "url": "sad",
+        "website": "sae",
+        "youtube_handle": "saf"
+      },
+      "ORGANIZATION_CALENDAR01": {
+        "avatar_url": "s140",
+        "coordinate": "s141",
+        "cover_image_url": "s142",
+        "description": "s143",
+        "id": "ORGANIZATION_CALENDAR01",
+        "instagram_handle": "s145",
+        "is_personal": true,
+        "location": "s147",
+        "name": "s148",
+        "slug": "s149",
+        "social_image_url": "s14a",
+        "tint_color": "s14b",
+        "twitter_handle": "s14c",
+        "url": "s14d",
+        "website": "s14e",
+        "youtube_handle": "s14f"
+      },
+      "ORGANIZATION_CALENDAR02": {
+        "avatar_url": "s1e0",
+        "coordinate": "s1e1",
+        "cover_image_url": "s1e2",
+        "description": "s1e3",
+        "id": "ORGANIZATION_CALENDAR02",
+        "instagram_handle": "s1e5",
+        "is_personal": true,
+        "location": "s1e7",
+        "name": "s1e8",
+        "slug": "s1e9",
+        "social_image_url": "s1ea",
+        "tint_color": "s1eb",
+        "twitter_handle": "s1ec",
+        "url": "s1ed",
+        "website": "s1ee",
+        "youtube_handle": "s1ef"
+      }
+    }
+  },
+  "new": {
+    "organization_calendar": {
+      "organization_calendar_ref01": {
+        "avatar_url": "s280",
+        "coordinate": "s281",
+        "cover_image_url": "s282",
+        "description": "s283",
+        "instagram_handle": "s285",
+        "is_personal": true,
+        "location": "s287",
+        "name": "s288",
+        "slug": "s289",
+        "social_image_url": "s28a",
+        "tint_color": "s28b",
+        "twitter_handle": "s28c",
+        "url": "s28d",
+        "website": "s28e",
+        "youtube_handle": "s28f"
+      }
+    }
+  }
+}

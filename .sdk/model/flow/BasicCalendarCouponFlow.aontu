@@ -1,0 +1,49 @@
+# BasicCalendarCouponFlow
+
+main: kit: flow: BasicCalendarCouponFlow:
+{
+  entity: "calendar_coupon",
+  kind: "basic",
+  name: "BasicCalendarCouponFlow",
+  step: [
+    {
+      input: {
+        ref: "calendar_coupon_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "calendar_coupon_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "calendar_coupon_ref01",
+        srcdatavar: "calendar_coupon_ref01_data",
+        suffix: "_up0",
+        textfield: "code"
+      }
+
+      op: "update",
+      spec: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-calendar_coupon_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCalendarCouponFlow"
+}

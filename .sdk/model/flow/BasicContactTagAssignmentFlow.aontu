@@ -1,0 +1,27 @@
+# BasicContactTagAssignmentFlow
+
+main: kit: flow: BasicContactTagAssignmentFlow:
+{
+  entity: "contact_tag_assignment",
+  kind: "basic",
+  name: "BasicContactTagAssignmentFlow",
+  step: [
+    {
+      input: {
+        ref: "contact_tag_assignment_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      input: {
+        ref: "contact_tag_assignment_ref01",
+        suffix: "_rm0"
+      }
+
+      op: "remove"
+    }
+  ],
+  "key$": "BasicContactTagAssignmentFlow"
+}

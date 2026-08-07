@@ -1,0 +1,226 @@
+# Entity: contact
+
+main: kit: entity: contact: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "avatar_url"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "contact"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "created_at"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "email"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "event_approved_count"
+      req: true
+      type: "`$NUMBER`"
+    }
+    {
+      name: "event_checked_in_count"
+      req: true
+      type: "`$NUMBER`"
+    }
+    {
+      name: "first_name"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "last_name"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "membership"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "revenue_usd_cent"
+      req: true
+      type: "`$NUMBER`"
+    }
+    {
+      name: "tag"
+      op: {
+        list: {
+          req: true
+          type: "`$ARRAY`"
+        }
+      }
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "user_id"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "contact"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/contacts/import"
+          parts: [
+            "v1"
+            "calendars"
+            "contacts"
+            "import"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "calendar_membership_tier_id"
+                orig: "calendar_membership_tier_id"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "membership_status"
+                orig: "membership_status"
+                reqd: false
+                type: "`$ANY`"
+              }
+              {
+                kind: "query"
+                name: "pagination_cursor"
+                orig: "pagination_cursor"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_limit"
+                orig: "pagination_limit"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                kind: "query"
+                name: "query"
+                orig: "query"
+                reqd: false
+                type: "`$ANY`"
+              }
+              {
+                kind: "query"
+                name: "sort_column"
+                orig: "sort_column"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sort_direction"
+                orig: "sort_direction"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "tag"
+                orig: "tag"
+                reqd: false
+                type: "`$ANY`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/calendars/contacts/list"
+          parts: [
+            "v1"
+            "calendars"
+            "contacts"
+            "list"
+          ]
+          select: {
+            exist: [
+              "calendar_membership_tier_id"
+              "membership_status"
+              "pagination_cursor"
+              "pagination_limit"
+              "query"
+              "sort_column"
+              "sort_direction"
+              "tag"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/contacts/remove"
+          parts: [
+            "v1"
+            "calendars"
+            "contacts"
+            "remove"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

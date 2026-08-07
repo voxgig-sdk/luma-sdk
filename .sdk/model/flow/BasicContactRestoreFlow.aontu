@@ -1,0 +1,18 @@
+# BasicContactRestoreFlow
+
+main: kit: flow: BasicContactRestoreFlow:
+{
+  entity: "contact_restore",
+  kind: "basic",
+  name: "BasicContactRestoreFlow",
+  step: [
+    {
+      input: {
+        ref: "contact_restore_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicContactRestoreFlow"
+}

@@ -1,0 +1,67 @@
+# BasicGuestFlow
+
+main: kit: flow: BasicGuestFlow:
+{
+  entity: "guest",
+  kind: "basic",
+  name: "BasicGuestFlow",
+  step: [
+    {
+      input: {
+        ref: "guest_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "guest_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "guest_ref01",
+        srcdatavar: "guest_ref01_data",
+        suffix: "_up0",
+        textfield: "approval_status"
+      }
+
+      op: "update",
+      spec: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-guest_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "guest_ref01",
+        srcdatavar: "guest_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-guest_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGuestFlow"
+}

@@ -1,0 +1,417 @@
+# Entity: event
+
+main: kit: entity: event: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "access"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "calendar_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "can_register_for_multiple_ticket"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "coordinate"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "cover_url"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "created_at"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "description"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "description_md"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "display_price"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "duration_interval"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "end_at"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "event_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "feedback_email"
+      req: true
+      type: "`$OBJECT`"
+    }
+    {
+      name: "geo_address_json"
+      op: {
+        create: {
+          req: false
+          type: "`$ANY`"
+        }
+        update: {
+          req: false
+          type: "`$ANY`"
+        }
+      }
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "guest_count"
+      req: true
+      type: "`$OBJECT`"
+    }
+    {
+      name: "host"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "location_type"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "location_visibility"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "max_capacity"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "meeting_url"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "name"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "name_requirement"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "phone_number_requirement"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "platform"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "registration_open"
+      op: {
+        create: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+        update: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+      }
+      req: true
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "registration_question"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "reminders_disabled"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "require_approval"
+      req: true
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "show_guest_list"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "slug"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "spots_remaining"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "start_at"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "suppress_notification"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "timezone"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "tint_color"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "user_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "visibility"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "waitlist_status"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "event"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/create"
+          parts: [
+            "v1"
+            "events"
+            "create"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "event_id"
+                orig: "event_id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/events/get"
+          parts: [
+            "v1"
+            "events"
+            "get"
+          ]
+          select: {
+            exist: [
+              "event_id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/cancel"
+          parts: [
+            "v1"
+            "events"
+            "cancel"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/update"
+          parts: [
+            "v1"
+            "events"
+            "update"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

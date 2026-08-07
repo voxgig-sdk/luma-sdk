@@ -1,0 +1,29 @@
+# BasicGuestTicketFlow
+
+main: kit: flow: BasicGuestTicketFlow:
+{
+  entity: "guest_ticket",
+  kind: "basic",
+  name: "BasicGuestTicketFlow",
+  step: [
+    {
+      input: {
+        ref: "guest_ticket_ref01",
+        srcdatavar: "guest_ticket_ref01_data",
+        suffix: "_up0",
+        textfield: "event_id"
+      }
+
+      op: "update",
+      spec: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-guest_ticket_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGuestTicketFlow"
+}

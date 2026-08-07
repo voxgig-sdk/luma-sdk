@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "calendar_event": {
+      "CALENDAR_EVENT00": {
+        "id": "CALENDAR_EVENT00",
+        "status": "s29",
+        "submitted_by": "s2a",
+        "tag": []
+      },
+      "CALENDAR_EVENT01": {
+        "id": "CALENDAR_EVENT01",
+        "status": "s51",
+        "submitted_by": "s52",
+        "tag": []
+      },
+      "CALENDAR_EVENT02": {
+        "id": "CALENDAR_EVENT02",
+        "status": "s79",
+        "submitted_by": "s7a",
+        "tag": []
+      }
+    }
+  },
+  "new": {
+    "calendar_event": {
+      "calendar_event_ref01": {
+        "status": "sa1",
+        "submitted_by": "sa2",
+        "tag": []
+      }
+    }
+  }
+}

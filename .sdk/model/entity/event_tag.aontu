@@ -1,0 +1,129 @@
+# Entity: event_tag
+
+main: kit: entity: event_tag: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "color"
+      op: {
+        list: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "tag_id"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "event_tag"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/event-tags/create"
+          parts: [
+            "v1"
+            "calendars"
+            "event-tags"
+            "create"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/v1/calendars/event-tags/list"
+          parts: [
+            "v1"
+            "calendars"
+            "event-tags"
+            "list"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/event-tags/delete"
+          parts: [
+            "v1"
+            "calendars"
+            "event-tags"
+            "delete"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/event-tags/update"
+          parts: [
+            "v1"
+            "calendars"
+            "event-tags"
+            "update"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,30 @@
+# BasicMembershipFlow
+
+main: kit: flow: BasicMembershipFlow:
+{
+  entity: "membership",
+  kind: "basic",
+  name: "BasicMembershipFlow",
+  step: [
+    {
+      input: {
+        ref: "membership_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "membership_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMembershipFlow"
+}

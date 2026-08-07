@@ -1,0 +1,74 @@
+# Entity: event_tag_assignment
+
+main: kit: entity: event_tag_assignment: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "applied_count"
+      req: true
+      type: "`$NUMBER`"
+    }
+    {
+      name: "event_id"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "skipped_count"
+      req: true
+      type: "`$NUMBER`"
+    }
+    {
+      name: "tag"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "event_tag_assignment"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/event-tags/apply"
+          parts: [
+            "v1"
+            "calendars"
+            "event-tags"
+            "apply"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/event-tags/unapply"
+          parts: [
+            "v1"
+            "calendars"
+            "event-tags"
+            "unapply"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

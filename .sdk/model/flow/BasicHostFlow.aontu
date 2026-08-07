@@ -1,0 +1,46 @@
+# BasicHostFlow
+
+main: kit: flow: BasicHostFlow:
+{
+  entity: "host",
+  kind: "basic",
+  name: "BasicHostFlow",
+  step: [
+    {
+      input: {
+        ref: "host_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      input: {
+        ref: "host_ref01",
+        srcdatavar: "host_ref01_data",
+        suffix: "_up0",
+        textfield: "email"
+      }
+
+      op: "update",
+      spec: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-host_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "host_ref01",
+        suffix: "_rm0"
+      }
+
+      op: "remove"
+    }
+  ],
+  "key$": "BasicHostFlow"
+}

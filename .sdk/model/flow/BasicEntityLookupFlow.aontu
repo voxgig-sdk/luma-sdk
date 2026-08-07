@@ -1,0 +1,28 @@
+# BasicEntityLookupFlow
+
+main: kit: flow: BasicEntityLookupFlow:
+{
+  entity: "entity_lookup",
+  kind: "basic",
+  name: "BasicEntityLookupFlow",
+  step: [
+    {
+      input: {
+        ref: "entity_lookup_ref01",
+        srcdatavar: "entity_lookup_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-entity_lookup_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEntityLookupFlow"
+}

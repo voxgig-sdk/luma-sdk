@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "image_upload": {
+      "IMAGE_UPLOAD00": {
+        "content_type": "s1e",
+        "file_url": "s1f",
+        "upload_url": "s20",
+        "id": "IMAGE_UPLOAD00"
+      },
+      "IMAGE_UPLOAD01": {
+        "content_type": "s3c",
+        "file_url": "s3d",
+        "upload_url": "s3e",
+        "id": "IMAGE_UPLOAD01"
+      },
+      "IMAGE_UPLOAD02": {
+        "content_type": "s5a",
+        "file_url": "s5b",
+        "upload_url": "s5c",
+        "id": "IMAGE_UPLOAD02"
+      }
+    }
+  },
+  "new": {
+    "image_upload": {
+      "image_upload_ref01": {
+        "content_type": "s78",
+        "file_url": "s79",
+        "upload_url": "s7a"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+# BasicEventTagAssignmentFlow
+
+main: kit: flow: BasicEventTagAssignmentFlow:
+{
+  entity: "event_tag_assignment",
+  kind: "basic",
+  name: "BasicEventTagAssignmentFlow",
+  step: [
+    {
+      input: {
+        ref: "event_tag_assignment_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      input: {
+        ref: "event_tag_assignment_ref01",
+        suffix: "_rm0"
+      }
+
+      op: "remove"
+    }
+  ],
+  "key$": "BasicEventTagAssignmentFlow"
+}

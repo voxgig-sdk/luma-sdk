@@ -1,0 +1,22 @@
+# BasicOrganizationEventFlow
+
+main: kit: flow: BasicOrganizationEventFlow:
+{
+  entity: "organization_event",
+  kind: "basic",
+  name: "BasicOrganizationEventFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "organization_event_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOrganizationEventFlow"
+}

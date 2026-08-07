@@ -1,0 +1,70 @@
+# Entity: calendar_admin
+
+main: kit: entity: calendar_admin: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "avatar_url"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "email"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "first_name"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "last_name"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "name"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "calendar_admin"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/v1/calendars/admins/list"
+          parts: [
+            "v1"
+            "calendars"
+            "admins"
+            "list"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

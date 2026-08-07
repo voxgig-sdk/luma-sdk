@@ -1,0 +1,18 @@
+# BasicOrganizationEventTransferFlow
+
+main: kit: flow: BasicOrganizationEventTransferFlow:
+{
+  entity: "organization_event_transfer",
+  kind: "basic",
+  name: "BasicOrganizationEventTransferFlow",
+  step: [
+    {
+      input: {
+        ref: "organization_event_transfer_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicOrganizationEventTransferFlow"
+}

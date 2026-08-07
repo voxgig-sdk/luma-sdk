@@ -1,0 +1,129 @@
+# Entity: contact_tag
+
+main: kit: entity: contact_tag: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "color"
+      op: {
+        list: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "tag_id"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "contact_tag"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/contact-tags/create"
+          parts: [
+            "v1"
+            "calendars"
+            "contact-tags"
+            "create"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          method: "GET"
+          orig: "/v1/calendars/contact-tags/list"
+          parts: [
+            "v1"
+            "calendars"
+            "contact-tags"
+            "list"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/contact-tags/delete"
+          parts: [
+            "v1"
+            "calendars"
+            "contact-tags"
+            "delete"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/contact-tags/update"
+          parts: [
+            "v1"
+            "calendars"
+            "contact-tags"
+            "update"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

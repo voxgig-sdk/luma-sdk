@@ -1,0 +1,18 @@
+# BasicImageUploadFlow
+
+main: kit: flow: BasicImageUploadFlow:
+{
+  entity: "image_upload",
+  kind: "basic",
+  name: "BasicImageUploadFlow",
+  step: [
+    {
+      input: {
+        ref: "image_upload_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicImageUploadFlow"
+}

@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "user": {
+      "USER00": {
+        "avatar_url": "s3c",
+        "email": "s3d",
+        "first_name": "s3e",
+        "id": "USER00",
+        "last_name": "s40",
+        "name": "s41"
+      },
+      "USER01": {
+        "avatar_url": "s78",
+        "email": "s79",
+        "first_name": "s7a",
+        "id": "USER01",
+        "last_name": "s7c",
+        "name": "s7d"
+      },
+      "USER02": {
+        "avatar_url": "sb4",
+        "email": "sb5",
+        "first_name": "sb6",
+        "id": "USER02",
+        "last_name": "sb8",
+        "name": "sb9"
+      }
+    }
+  },
+  "new": {
+    "user": {
+      "user_ref01": {
+        "avatar_url": "sf0",
+        "email": "sf1",
+        "first_name": "sf2",
+        "last_name": "sf4",
+        "name": "sf5"
+      }
+    }
+  }
+}

@@ -1,0 +1,221 @@
+# Entity: ticket_type
+
+main: kit: entity: ticket_type: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "cent"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "currency"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "description"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "is_flexible"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "is_hidden"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "max_capacity"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "min_cent"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "require_approval"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "type"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "valid_end_at"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "valid_start_at"
+      req: false
+      type: "`$ANY`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "ticket_type"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/ticket-types/create"
+          parts: [
+            "v1"
+            "events"
+            "ticket-types"
+            "create"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "event_id"
+                orig: "event_id"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "include_hidden"
+                orig: "include_hidden"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/events/ticket-types/list"
+          parts: [
+            "v1"
+            "events"
+            "ticket-types"
+            "list"
+          ]
+          select: {
+            exist: [
+              "event_id"
+              "include_hidden"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "event_ticket_type_id"
+                orig: "event_ticket_type_id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/events/ticket-types/get"
+          parts: [
+            "v1"
+            "events"
+            "ticket-types"
+            "get"
+          ]
+          select: {
+            exist: [
+              "event_ticket_type_id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/ticket-types/delete"
+          parts: [
+            "v1"
+            "events"
+            "ticket-types"
+            "delete"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/ticket-types/update"
+          parts: [
+            "v1"
+            "events"
+            "ticket-types"
+            "update"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "event_tag_assignment": {
+      "EVENT_TAG_ASSIGNMENT00": {
+        "applied_count": 40,
+        "event_id": "EVENT01",
+        "skipped_count": 42,
+        "tag": "s2b",
+        "id": "EVENT_TAG_ASSIGNMENT00"
+      },
+      "EVENT_TAG_ASSIGNMENT01": {
+        "applied_count": 80,
+        "event_id": "EVENT01",
+        "skipped_count": 82,
+        "tag": "s53",
+        "id": "EVENT_TAG_ASSIGNMENT01"
+      },
+      "EVENT_TAG_ASSIGNMENT02": {
+        "applied_count": 120,
+        "event_id": "EVENT01",
+        "skipped_count": 122,
+        "tag": "s7b",
+        "id": "EVENT_TAG_ASSIGNMENT02"
+      }
+    }
+  },
+  "new": {
+    "event_tag_assignment": {
+      "event_tag_assignment_ref01": {
+        "applied_count": 160,
+        "event_id": "EVENT01",
+        "skipped_count": 162,
+        "tag": "sa3"
+      }
+    }
+  }
+}

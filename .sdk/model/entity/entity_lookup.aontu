@@ -1,0 +1,47 @@
+# Entity: entity_lookup
+
+main: kit: entity: entity_lookup: {
+
+  alias: field: {}
+
+  name: "entity_lookup"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "slug"
+                orig: "slug"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/entities/lookup"
+          parts: [
+            "v1"
+            "entities"
+            "lookup"
+          ]
+          select: {
+            exist: [
+              "slug"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entity`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

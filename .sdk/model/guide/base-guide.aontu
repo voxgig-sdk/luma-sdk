@@ -1,0 +1,239 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 6
+  metrics: count: path: 66
+  metrics: count: method: 66
+
+  entity: calendar: {
+    path: "/v1/calendars/admins/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/calendars/contact-tags/apply": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/contact-tags/create": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/contact-tags/delete": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/contact-tags/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/calendars/contact-tags/unapply": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/contact-tags/update": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/contacts/block": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/contacts/import": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/contacts/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/calendars/contacts/remove": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/contacts/restore": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/coupons/create": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/coupons/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/calendars/coupons/update": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/event-tags/apply": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/event-tags/create": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/event-tags/delete": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/event-tags/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/calendars/event-tags/unapply": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/event-tags/update": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/events/add": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/events/approve": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/events/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/calendars/events/lookup": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.event`")|top
+    }
+    path: "/v1/calendars/events/reject": {
+      op: create: method: *POST
+    }
+    path: "/v1/calendars/get": {
+      action: "get": {}
+      op: load: method: *GET
+    }
+    path: "/v1/calendars/update": {
+      action: "update": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: event: {
+    path: "/v1/events/cancel": {
+      action: "cancel": {}
+      op: create: method: *POST
+    }
+    path: "/v1/events/cancel/request": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/coupons/create": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/coupons/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/events/coupons/update": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/create": {
+      action: "create": {}
+      op: create: method: *POST
+    }
+    path: "/v1/events/get": {
+      action: "get": {}
+      op: list: method: *GET
+    }
+    path: "/v1/events/guests/add": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/guests/get": {
+      op: list: method: *GET
+    }
+    path: "/v1/events/guests/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/events/guests/send-invites": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/guests/update-status": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/guests/update-tickets": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/hosts/add": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/hosts/remove": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/hosts/update": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/ticket-types/create": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/ticket-types/delete": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/ticket-types/get": {
+      op: load: method: *GET
+    }
+    path: "/v1/events/ticket-types/list": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/events/ticket-types/update": {
+      op: create: method: *POST
+    }
+    path: "/v1/events/update": {
+      action: "update": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: membership: {
+    path: "/v1/memberships/members/add": {
+      op: create: method: *POST
+    }
+    path: "/v1/memberships/members/update-status": {
+      op: create: method: *POST
+    }
+    path: "/v1/memberships/tiers/list": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: miscellaneous: {
+    path: "/v1/entities/lookup": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.entity`")|top
+    }
+    path: "/v1/images/create-upload-url": {
+      op: create: method: *POST
+    }
+    path: "/v1/users/get-self": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: organization: {
+    path: "/v1/organizations/admins/list": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.entries`")|top
+    }
+    path: "/v1/organizations/calendars/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/organizations/events/list": {
+      op: list: method: *GET
+    }
+    path: "/v1/organizations/events/transfer-calendar": {
+      op: create: method: *POST
+    }
+    path: "/v2/organizations/calendars/create": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: webhook: {
+    path: "/v1/webhooks/delete": {
+      action: "delete": {}
+      op: create: method: *POST
+    }
+    path: "/v1/webhooks/list": {
+      action: "list": {}
+      op: list: method: *GET
+    }
+    path: "/v2/webhooks/create": {
+      action: "create": {}
+      op: create: method: *POST
+    }
+    path: "/v2/webhooks/get": {
+      action: "get": {}
+      op: list: method: *GET
+    }
+    path: "/v2/webhooks/update": {
+      action: "update": {}
+      op: create: method: *POST
+    }
+  }
+
+}

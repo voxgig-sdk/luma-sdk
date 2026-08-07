@@ -1,0 +1,40 @@
+# Entity: calendar_event_approval
+
+main: kit: entity: calendar_event_approval: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "calendar_event_id"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "calendar_event_approval"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/events/approve"
+          parts: [
+            "v1"
+            "calendars"
+            "events"
+            "approve"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

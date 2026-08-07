@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "guest_invite": {
+      "GUEST_INVITE00": {
+        "event_id": "EVENT01",
+        "guest": [],
+        "message": "s20",
+        "id": "GUEST_INVITE00"
+      },
+      "GUEST_INVITE01": {
+        "event_id": "EVENT01",
+        "guest": [],
+        "message": "s3e",
+        "id": "GUEST_INVITE01"
+      },
+      "GUEST_INVITE02": {
+        "event_id": "EVENT01",
+        "guest": [],
+        "message": "s5c",
+        "id": "GUEST_INVITE02"
+      }
+    }
+  },
+  "new": {
+    "guest_invite": {
+      "guest_invite_ref01": {
+        "event_id": "EVENT01",
+        "guest": [],
+        "message": "s7a"
+      }
+    }
+  }
+}

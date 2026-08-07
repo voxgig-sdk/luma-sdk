@@ -1,0 +1,313 @@
+# Entity: guest
+
+main: kit: entity: guest: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "approval_status"
+      op: {
+        create: {
+          req: false
+          type: "`$ANY`"
+        }
+      }
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "check_in_qr_code"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "eth_address"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "event_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "event_ticket"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "event_ticket_order"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "guest"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "guest_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "invited_at"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "joined_at"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "message"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "phone_number"
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "registered_at"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "registration_answer"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "send_email"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "should_refund"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "solana_address"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "status"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "ticket"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "user_email"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "user_first_name"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "user_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "user_last_name"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "user_name"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "utm_source"
+      req: true
+      type: "`$ANY`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "guest"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/guests/add"
+          parts: [
+            "v1"
+            "events"
+            "guests"
+            "add"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "approval_status"
+                orig: "approval_status"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "event_id"
+                orig: "event_id"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_cursor"
+                orig: "pagination_cursor"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_limit"
+                orig: "pagination_limit"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                kind: "query"
+                name: "sort_column"
+                orig: "sort_column"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sort_direction"
+                orig: "sort_direction"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/events/guests/list"
+          parts: [
+            "v1"
+            "events"
+            "guests"
+            "list"
+          ]
+          select: {
+            exist: [
+              "approval_status"
+              "event_id"
+              "pagination_cursor"
+              "pagination_limit"
+              "sort_column"
+              "sort_direction"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "event_id"
+                orig: "event_id"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/events/guests/get"
+          parts: [
+            "v1"
+            "events"
+            "guests"
+            "get"
+          ]
+          select: {
+            exist: [
+              "event_id"
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/guests/update-status"
+          parts: [
+            "v1"
+            "events"
+            "guests"
+            "update-status"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

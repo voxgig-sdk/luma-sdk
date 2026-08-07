@@ -1,0 +1,20 @@
+{
+  "existing": {
+    "entity_lookup": {
+      "ENTITY_LOOKUP00": {
+        "id": "ENTITY_LOOKUP00"
+      },
+      "ENTITY_LOOKUP01": {
+        "id": "ENTITY_LOOKUP01"
+      },
+      "ENTITY_LOOKUP02": {
+        "id": "ENTITY_LOOKUP02"
+      }
+    }
+  },
+  "new": {
+    "entity_lookup": {
+      "entity_lookup_ref01": {}
+    }
+  }
+}

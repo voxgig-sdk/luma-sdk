@@ -1,0 +1,60 @@
+# Entity: guest_ticket
+
+main: kit: entity: guest_ticket: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "event_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "guest_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "send_email"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "ticket_ids_to_remove"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "tickets_to_add"
+      req: false
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "guest_ticket"
+  op: {
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/guests/update-tickets"
+          parts: [
+            "v1"
+            "events"
+            "guests"
+            "update-tickets"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

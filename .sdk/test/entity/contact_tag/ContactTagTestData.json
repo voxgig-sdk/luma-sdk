@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "contact_tag": {
+      "CONTACT_TAG00": {
+        "color": "s28",
+        "id": "CONTACT_TAG00",
+        "name": "s2a",
+        "tag_id": "TAG01"
+      },
+      "CONTACT_TAG01": {
+        "color": "s50",
+        "id": "CONTACT_TAG01",
+        "name": "s52",
+        "tag_id": "TAG01"
+      },
+      "CONTACT_TAG02": {
+        "color": "s78",
+        "id": "CONTACT_TAG02",
+        "name": "s7a",
+        "tag_id": "TAG01"
+      }
+    }
+  },
+  "new": {
+    "contact_tag": {
+      "contact_tag_ref01": {
+        "color": "sa0",
+        "name": "sa2",
+        "tag_id": "TAG01"
+      }
+    }
+  }
+}

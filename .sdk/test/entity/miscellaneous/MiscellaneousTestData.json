@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "miscellaneous": {
+      "MISCELLANEOUS00": {
+        "avatar_url": "s5a",
+        "content_type": "s5b",
+        "email": "s5c",
+        "file_url": "s5d",
+        "first_name": "s5e",
+        "id": "MISCELLANEOUS00",
+        "last_name": "s60",
+        "name": "s61",
+        "upload_url": "s62"
+      },
+      "MISCELLANEOUS01": {
+        "avatar_url": "sb4",
+        "content_type": "sb5",
+        "email": "sb6",
+        "file_url": "sb7",
+        "first_name": "sb8",
+        "id": "MISCELLANEOUS01",
+        "last_name": "sba",
+        "name": "sbb",
+        "upload_url": "sbc"
+      },
+      "MISCELLANEOUS02": {
+        "avatar_url": "s10e",
+        "content_type": "s10f",
+        "email": "s110",
+        "file_url": "s111",
+        "first_name": "s112",
+        "id": "MISCELLANEOUS02",
+        "last_name": "s114",
+        "name": "s115",
+        "upload_url": "s116"
+      }
+    }
+  },
+  "new": {
+    "miscellaneous": {
+      "miscellaneous_ref01": {
+        "avatar_url": "s168",
+        "content_type": "s169",
+        "email": "s16a",
+        "file_url": "s16b",
+        "first_name": "s16c",
+        "last_name": "s16e",
+        "name": "s16f",
+        "upload_url": "s170"
+      }
+    }
+  }
+}

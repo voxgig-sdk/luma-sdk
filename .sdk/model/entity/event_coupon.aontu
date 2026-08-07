@@ -1,0 +1,195 @@
+# Entity: event_coupon
+
+main: kit: entity: event_coupon: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "cents_off"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "code"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "currency"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "discount"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "event_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "event_ticket_type_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "percent_off"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "remaining_count"
+      op: {
+        create: {
+          req: false
+          type: "`$INTEGER`"
+        }
+        update: {
+          req: false
+          type: "`$INTEGER`"
+        }
+      }
+      req: true
+      type: "`$INTEGER`"
+    }
+    {
+      name: "valid_end_at"
+      op: {
+        create: {
+          req: false
+          type: "`$ANY`"
+        }
+        update: {
+          req: false
+          type: "`$ANY`"
+        }
+      }
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "valid_start_at"
+      op: {
+        create: {
+          req: false
+          type: "`$ANY`"
+        }
+        update: {
+          req: false
+          type: "`$ANY`"
+        }
+      }
+      req: true
+      type: "`$ANY`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "event_coupon"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/coupons/create"
+          parts: [
+            "v1"
+            "events"
+            "coupons"
+            "create"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "event_id"
+                orig: "event_id"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_cursor"
+                orig: "pagination_cursor"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_limit"
+                orig: "pagination_limit"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/events/coupons/list"
+          parts: [
+            "v1"
+            "events"
+            "coupons"
+            "list"
+          ]
+          select: {
+            exist: [
+              "event_id"
+              "pagination_cursor"
+              "pagination_limit"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/coupons/update"
+          parts: [
+            "v1"
+            "events"
+            "coupons"
+            "update"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

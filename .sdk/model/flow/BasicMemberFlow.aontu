@@ -1,0 +1,37 @@
+# BasicMemberFlow
+
+main: kit: flow: BasicMemberFlow:
+{
+  entity: "member",
+  kind: "basic",
+  name: "BasicMemberFlow",
+  step: [
+    {
+      input: {
+        ref: "member_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      input: {
+        ref: "member_ref01",
+        srcdatavar: "member_ref01_data",
+        suffix: "_up0",
+        textfield: "email"
+      }
+
+      op: "update",
+      spec: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-member_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMemberFlow"
+}

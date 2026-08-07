@@ -1,0 +1,49 @@
+# Entity: image_upload
+
+main: kit: entity: image_upload: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "content_type"
+      req: false
+      type: "`$ANY`"
+    }
+    {
+      name: "file_url"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "upload_url"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "image_upload"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/images/create-upload-url"
+          parts: [
+            "v1"
+            "images"
+            "create-upload-url"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

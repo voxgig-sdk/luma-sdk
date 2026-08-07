@@ -1,0 +1,49 @@
+# BasicEventCouponFlow
+
+main: kit: flow: BasicEventCouponFlow:
+{
+  entity: "event_coupon",
+  kind: "basic",
+  name: "BasicEventCouponFlow",
+  step: [
+    {
+      input: {
+        ref: "event_coupon_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "event_coupon_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "event_coupon_ref01",
+        srcdatavar: "event_coupon_ref01_data",
+        suffix: "_up0",
+        textfield: "code"
+      }
+
+      op: "update",
+      spec: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-event_coupon_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEventCouponFlow"
+}

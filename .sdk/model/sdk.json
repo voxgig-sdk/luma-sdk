@@ -1,0 +1,6336 @@
+{
+  "NAME": "LUMA",
+  "Name": "Luma",
+  "def": "luma-openapi.json",
+  "main": {
+    "api": {
+      "entity": {},
+      "guide": {}
+    },
+    "custom": {
+      "plurals": {}
+    },
+    "def": {
+      "desc": ""
+    },
+    "kit": {
+      "config": {
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ],
+        "headers": {
+          "content-type": "application/json"
+        }
+      },
+      "entity": {
+        "calendar": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "avatar_url",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "calendar_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "coordinate",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "cover_image_url",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "description",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "instagram_handle",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "is_personal",
+              "req": true,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "location",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "slug",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "social_image_url",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "tint_color",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "twitter_handle",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "website",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "youtube_handle",
+              "req": true,
+              "type": "`$ANY`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "calendar",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/v1/calendars/get",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "get"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/update",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "update"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "calendar_admin": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "avatar_url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "email",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "first_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "last_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "calendar_admin",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/v1/calendars/admins/list",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "admins",
+                    "list"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "calendar_coupon": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "cents_off",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "code",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "currency",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "discount",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "event_ticket_type_id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "percent_off",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "remaining_count",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$INTEGER`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$INTEGER`"
+                }
+              },
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "valid_end_at",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$ANY`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$ANY`"
+                }
+              },
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "valid_start_at",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$ANY`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$ANY`"
+                }
+              },
+              "req": true,
+              "type": "`$ANY`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "calendar_coupon",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/coupons/create",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "coupons",
+                    "create"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_cursor",
+                        "orig": "pagination_cursor",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_limit",
+                        "orig": "pagination_limit",
+                        "reqd": false,
+                        "type": "`$NUMBER`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/calendars/coupons/list",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "coupons",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "pagination_cursor",
+                      "pagination_limit"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/coupons/update",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "coupons",
+                    "update"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "calendar_event": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "status",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "submitted_by",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "tag",
+              "req": true,
+              "type": "`$ARRAY`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "calendar_event",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/events/add",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "events",
+                    "add"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "access",
+                        "orig": "access",
+                        "reqd": false,
+                        "type": "`$ARRAY`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "after",
+                        "orig": "after",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "before",
+                        "orig": "before",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_cursor",
+                        "orig": "pagination_cursor",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_limit",
+                        "orig": "pagination_limit",
+                        "reqd": false,
+                        "type": "`$NUMBER`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "platform",
+                        "orig": "platform",
+                        "reqd": false,
+                        "type": "`$ARRAY`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "sort_column",
+                        "orig": "sort_column",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "sort_direction",
+                        "orig": "sort_direction",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "status",
+                        "orig": "status",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/calendars/events/list",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "events",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "access",
+                      "after",
+                      "before",
+                      "pagination_cursor",
+                      "pagination_limit",
+                      "platform",
+                      "sort_column",
+                      "sort_direction",
+                      "status"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "event_api_id",
+                        "orig": "event_api_id",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "event_id",
+                        "orig": "event_id",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "platform",
+                        "orig": "platform",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "url",
+                        "orig": "url",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/calendars/events/lookup",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "events",
+                    "lookup"
+                  ],
+                  "select": {
+                    "exist": [
+                      "event_api_id",
+                      "event_id",
+                      "platform",
+                      "url"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.event`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "calendar_event_approval": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "calendar_event_id",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "calendar_event_approval",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/events/approve",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "events",
+                    "approve"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "calendar_event_rejection": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "calendar_event_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "message",
+              "req": false,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "calendar_event_rejection",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/events/reject",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "events",
+                    "reject"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "contact": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "avatar_url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "contact",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "created_at",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "email",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "event_approved_count",
+              "req": true,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "event_checked_in_count",
+              "req": true,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "first_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "last_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "membership",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "revenue_usd_cent",
+              "req": true,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "tag",
+              "op": {
+                "list": {
+                  "req": true,
+                  "type": "`$ARRAY`"
+                }
+              },
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "user_id",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "contact",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/contacts/import",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contacts",
+                    "import"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "calendar_membership_tier_id",
+                        "orig": "calendar_membership_tier_id",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "membership_status",
+                        "orig": "membership_status",
+                        "reqd": false,
+                        "type": "`$ANY`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_cursor",
+                        "orig": "pagination_cursor",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_limit",
+                        "orig": "pagination_limit",
+                        "reqd": false,
+                        "type": "`$NUMBER`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "query",
+                        "orig": "query",
+                        "reqd": false,
+                        "type": "`$ANY`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "sort_column",
+                        "orig": "sort_column",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "sort_direction",
+                        "orig": "sort_direction",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "tag",
+                        "orig": "tag",
+                        "reqd": false,
+                        "type": "`$ANY`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/calendars/contacts/list",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contacts",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "calendar_membership_tier_id",
+                      "membership_status",
+                      "pagination_cursor",
+                      "pagination_limit",
+                      "query",
+                      "sort_column",
+                      "sort_direction",
+                      "tag"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/contacts/remove",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contacts",
+                    "remove"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "contact_block": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "contact_id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "email",
+              "req": false,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "contact_block",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/contacts/block",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contacts",
+                    "block"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "contact_restore": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "contact_id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "email",
+              "req": false,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "contact_restore",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/contacts/restore",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contacts",
+                    "restore"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "contact_tag": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "color",
+              "op": {
+                "list": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "tag_id",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "contact_tag",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/contact-tags/create",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contact-tags",
+                    "create"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/v1/calendars/contact-tags/list",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contact-tags",
+                    "list"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/contact-tags/delete",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contact-tags",
+                    "delete"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/contact-tags/update",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contact-tags",
+                    "update"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "contact_tag_assignment": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "applied_count",
+              "req": true,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "email",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "skipped_count",
+              "req": true,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "tag",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "user_id",
+              "req": false,
+              "type": "`$ARRAY`"
+            }
+          ],
+          "name": "contact_tag_assignment",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/contact-tags/apply",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contact-tags",
+                    "apply"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/contact-tags/unapply",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "contact-tags",
+                    "unapply"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "entity_lookup": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [],
+          "name": "entity_lookup",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "slug",
+                        "orig": "slug",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/entities/lookup",
+                  "parts": [
+                    "v1",
+                    "entities",
+                    "lookup"
+                  ],
+                  "select": {
+                    "exist": [
+                      "slug"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entity`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "event": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "access",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "calendar_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "can_register_for_multiple_ticket",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "coordinate",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "cover_url",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "created_at",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "description",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "description_md",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "display_price",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "duration_interval",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "end_at",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "event_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "feedback_email",
+              "req": true,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "geo_address_json",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$ANY`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$ANY`"
+                }
+              },
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "guest_count",
+              "req": true,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "host",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "location_type",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "location_visibility",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "max_capacity",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "meeting_url",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "name_requirement",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "phone_number_requirement",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "platform",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "registration_open",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$BOOLEAN`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$BOOLEAN`"
+                }
+              },
+              "req": true,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "registration_question",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "reminders_disabled",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "require_approval",
+              "req": true,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "show_guest_list",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "slug",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "spots_remaining",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "start_at",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "suppress_notification",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "timezone",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "tint_color",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "user_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "visibility",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "waitlist_status",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "event",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/create",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "create"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "event_id",
+                        "orig": "event_id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/events/get",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "get"
+                  ],
+                  "select": {
+                    "exist": [
+                      "event_id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/cancel",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "cancel"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/update",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "update"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "event_cancel_request": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "cancellation_token",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "event_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "guest_count",
+              "req": true,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "is_paid",
+              "req": true,
+              "type": "`$BOOLEAN`"
+            }
+          ],
+          "name": "event_cancel_request",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/cancel/request",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "cancel",
+                    "request"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "event_coupon": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "cents_off",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "code",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "currency",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "discount",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "event_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "event_ticket_type_id",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "percent_off",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "remaining_count",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$INTEGER`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$INTEGER`"
+                }
+              },
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "valid_end_at",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$ANY`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$ANY`"
+                }
+              },
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "valid_start_at",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$ANY`"
+                },
+                "update": {
+                  "req": false,
+                  "type": "`$ANY`"
+                }
+              },
+              "req": true,
+              "type": "`$ANY`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "event_coupon",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/coupons/create",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "coupons",
+                    "create"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "event_id",
+                        "orig": "event_id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_cursor",
+                        "orig": "pagination_cursor",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_limit",
+                        "orig": "pagination_limit",
+                        "reqd": false,
+                        "type": "`$NUMBER`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/events/coupons/list",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "coupons",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "event_id",
+                      "pagination_cursor",
+                      "pagination_limit"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/coupons/update",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "coupons",
+                    "update"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "event_tag": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "color",
+              "op": {
+                "list": {
+                  "req": true,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "tag_id",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "event_tag",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/event-tags/create",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "event-tags",
+                    "create"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/v1/calendars/event-tags/list",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "event-tags",
+                    "list"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/event-tags/delete",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "event-tags",
+                    "delete"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/event-tags/update",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "event-tags",
+                    "update"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "event_tag_assignment": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "applied_count",
+              "req": true,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "event_id",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "skipped_count",
+              "req": true,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "tag",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "event_tag_assignment",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/event-tags/apply",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "event-tags",
+                    "apply"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/calendars/event-tags/unapply",
+                  "parts": [
+                    "v1",
+                    "calendars",
+                    "event-tags",
+                    "unapply"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "guest": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "approval_status",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$ANY`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "check_in_qr_code",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "eth_address",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "event_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "event_ticket",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "event_ticket_order",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "guest",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "guest_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "invited_at",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "joined_at",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "message",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "phone_number",
+              "req": true,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "registered_at",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "registration_answer",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "send_email",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "should_refund",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "solana_address",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "status",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "ticket",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "user_email",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "user_first_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "user_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "user_last_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "user_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "utm_source",
+              "req": true,
+              "type": "`$ANY`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "guest",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/guests/add",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "guests",
+                    "add"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "approval_status",
+                        "orig": "approval_status",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "event_id",
+                        "orig": "event_id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_cursor",
+                        "orig": "pagination_cursor",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_limit",
+                        "orig": "pagination_limit",
+                        "reqd": false,
+                        "type": "`$NUMBER`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "sort_column",
+                        "orig": "sort_column",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "sort_direction",
+                        "orig": "sort_direction",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/events/guests/list",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "guests",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "approval_status",
+                      "event_id",
+                      "pagination_cursor",
+                      "pagination_limit",
+                      "sort_column",
+                      "sort_direction"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "event_id",
+                        "orig": "event_id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "id",
+                        "orig": "id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/events/guests/get",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "guests",
+                    "get"
+                  ],
+                  "select": {
+                    "exist": [
+                      "event_id",
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/guests/update-status",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "guests",
+                    "update-status"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "guest_invite": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "event_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "guest",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "message",
+              "req": false,
+              "type": "`$ANY`"
+            }
+          ],
+          "name": "guest_invite",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/guests/send-invites",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "guests",
+                    "send-invites"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "guest_ticket": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "event_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "guest_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "send_email",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "ticket_ids_to_remove",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "tickets_to_add",
+              "req": false,
+              "type": "`$ARRAY`"
+            }
+          ],
+          "name": "guest_ticket",
+          "op": {
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/guests/update-tickets",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "guests",
+                    "update-tickets"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "host": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "access_level",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "email",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "event_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "is_visible",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": false,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "host",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/hosts/add",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "hosts",
+                    "add"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/hosts/remove",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "hosts",
+                    "remove"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/hosts/update",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "hosts",
+                    "update"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "image_upload": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "content_type",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "file_url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "upload_url",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "image_upload",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/images/create-upload-url",
+                  "parts": [
+                    "v1",
+                    "images",
+                    "create-upload-url"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "member": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "email",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "membership_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "membership_tier_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "registration_answer",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "skip_payment",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "status",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "user_id",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "member",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/memberships/members/add",
+                  "parts": [
+                    "v1",
+                    "memberships",
+                    "members",
+                    "add"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/memberships/members/update-status",
+                  "parts": [
+                    "v1",
+                    "memberships",
+                    "members",
+                    "update-status"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "membership_tier": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "access_info",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "description",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "tint_color",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "membership_tier",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_cursor",
+                        "orig": "pagination_cursor",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_limit",
+                        "orig": "pagination_limit",
+                        "reqd": false,
+                        "type": "`$NUMBER`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/memberships/tiers/list",
+                  "parts": [
+                    "v1",
+                    "memberships",
+                    "tiers",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "pagination_cursor",
+                      "pagination_limit"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "organization_admin": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "api_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "avatar_url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "email",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "first_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "last_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "organization_admin",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/v1/organizations/admins/list",
+                  "parts": [
+                    "v1",
+                    "organizations",
+                    "admins",
+                    "list"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "organization_calendar": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "avatar_url",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "coordinate",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "cover_image_url",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "description",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "instagram_handle",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "is_personal",
+              "req": true,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "location",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "slug",
+              "op": {
+                "create": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "social_image_url",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "tint_color",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "twitter_handle",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "website",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "youtube_handle",
+              "req": true,
+              "type": "`$ANY`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "organization_calendar",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v2/organizations/calendars/create",
+                  "parts": [
+                    "v2",
+                    "organizations",
+                    "calendars",
+                    "create"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_cursor",
+                        "orig": "pagination_cursor",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_limit",
+                        "orig": "pagination_limit",
+                        "reqd": false,
+                        "type": "`$NUMBER`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/organizations/calendars/list",
+                  "parts": [
+                    "v1",
+                    "organizations",
+                    "calendars",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "pagination_cursor",
+                      "pagination_limit"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "organization_event": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "api_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "calendar_api_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "calendar_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "coordinate",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "cover_url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "created_at",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "display_price",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "duration_interval",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "end_at",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "feedback_email",
+              "req": true,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "geo_address_json",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "geo_latitude",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "geo_longitude",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "location_type",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "location_visibility",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "managing_calendar",
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "meeting_url",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "platform",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "registration_open",
+              "req": true,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "registration_question",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "require_approval",
+              "req": true,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "spots_remaining",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "start_at",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "timezone",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "user_api_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "user_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "visibility",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "waitlist_status",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "zoom_meeting_url",
+              "req": true,
+              "type": "`$ANY`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "organization_event",
+          "op": {
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "after",
+                        "orig": "after",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "before",
+                        "orig": "before",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_cursor",
+                        "orig": "pagination_cursor",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_limit",
+                        "orig": "pagination_limit",
+                        "reqd": false,
+                        "type": "`$NUMBER`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "sort_direction",
+                        "orig": "sort_direction",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/organizations/events/list",
+                  "parts": [
+                    "v1",
+                    "organizations",
+                    "events",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "after",
+                      "before",
+                      "pagination_cursor",
+                      "pagination_limit",
+                      "sort_direction"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "organization_event_transfer": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "calendar_id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "event_id",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "name": "organization_event_transfer",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/organizations/events/transfer-calendar",
+                  "parts": [
+                    "v1",
+                    "organizations",
+                    "events",
+                    "transfer-calendar"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "ticket_type": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "cent",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "currency",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "description",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "is_flexible",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "is_hidden",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "max_capacity",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "min_cent",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "require_approval",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "type",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "valid_end_at",
+              "req": false,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "valid_start_at",
+              "req": false,
+              "type": "`$ANY`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "ticket_type",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/ticket-types/create",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "ticket-types",
+                    "create"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "event_id",
+                        "orig": "event_id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "include_hidden",
+                        "orig": "include_hidden",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/events/ticket-types/list",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "ticket-types",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "event_id",
+                      "include_hidden"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "event_ticket_type_id",
+                        "orig": "event_ticket_type_id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/events/ticket-types/get",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "ticket-types",
+                    "get"
+                  ],
+                  "select": {
+                    "exist": [
+                      "event_ticket_type_id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/ticket-types/delete",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "ticket-types",
+                    "delete"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/events/ticket-types/update",
+                  "parts": [
+                    "v1",
+                    "events",
+                    "ticket-types",
+                    "update"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "user": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "avatar_url",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "email",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "first_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "last_name",
+              "req": true,
+              "type": "`$ANY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "user",
+          "op": {
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "GET",
+                  "orig": "/v1/users/get-self",
+                  "parts": [
+                    "v1",
+                    "users",
+                    "get-self"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        },
+        "webhook": {
+          "active": true,
+          "alias": {
+            "field": {}
+          },
+          "fields": [
+            {
+              "active": true,
+              "name": "created_at",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "event_type",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$ARRAY`"
+                }
+              },
+              "req": true,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "id",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "secret",
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "status",
+              "op": {
+                "update": {
+                  "req": false,
+                  "type": "`$STRING`"
+                }
+              },
+              "req": true,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": true,
+              "type": "`$STRING`"
+            }
+          ],
+          "id": {
+            "field": "id",
+            "name": "id"
+          },
+          "name": "webhook",
+          "op": {
+            "create": {
+              "input": "data",
+              "name": "create",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v2/webhooks/create",
+                  "parts": [
+                    "v2",
+                    "webhooks",
+                    "create"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "list": {
+              "input": "data",
+              "name": "list",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_cursor",
+                        "orig": "pagination_cursor",
+                        "reqd": false,
+                        "type": "`$STRING`"
+                      },
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "pagination_limit",
+                        "orig": "pagination_limit",
+                        "reqd": false,
+                        "type": "`$NUMBER`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v1/webhooks/list",
+                  "parts": [
+                    "v1",
+                    "webhooks",
+                    "list"
+                  ],
+                  "select": {
+                    "exist": [
+                      "pagination_cursor",
+                      "pagination_limit"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body.entries`"
+                  }
+                }
+              ]
+            },
+            "load": {
+              "input": "data",
+              "name": "load",
+              "points": [
+                {
+                  "active": true,
+                  "args": {
+                    "query": [
+                      {
+                        "active": true,
+                        "kind": "query",
+                        "name": "id",
+                        "orig": "id",
+                        "reqd": true,
+                        "type": "`$STRING`"
+                      }
+                    ]
+                  },
+                  "method": "GET",
+                  "orig": "/v2/webhooks/get",
+                  "parts": [
+                    "v2",
+                    "webhooks",
+                    "get"
+                  ],
+                  "select": {
+                    "exist": [
+                      "id"
+                    ]
+                  },
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "remove": {
+              "input": "data",
+              "name": "remove",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v1/webhooks/delete",
+                  "parts": [
+                    "v1",
+                    "webhooks",
+                    "delete"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            },
+            "update": {
+              "input": "data",
+              "name": "update",
+              "points": [
+                {
+                  "active": true,
+                  "args": {},
+                  "method": "POST",
+                  "orig": "/v2/webhooks/update",
+                  "parts": [
+                    "v2",
+                    "webhooks",
+                    "update"
+                  ],
+                  "select": {},
+                  "transform": {
+                    "req": "`reqdata`",
+                    "res": "`body`"
+                  }
+                }
+              ]
+            }
+          },
+          "relations": {
+            "ancestors": []
+          }
+        }
+      },
+      "feature": {
+        "test": {
+          "active": true,
+          "config": {
+            "options": {
+              "active": false
+            }
+          },
+          "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": true,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": true,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PrePoint": {
+              "active": true,
+              "await": false
+            },
+            "PreRequest": {
+              "active": true,
+              "await": false
+            },
+            "PreResponse": {
+              "active": true,
+              "await": false
+            },
+            "PreResult": {
+              "active": true,
+              "await": false
+            },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
+              "await": false
+            }
+          },
+          "name": "test",
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "js": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1"
+        }
+      },
+      "flow": {
+        "BasicCalendarAdminFlow": {
+          "active": true,
+          "entity": "calendar_admin",
+          "key$": "BasicCalendarAdminFlow",
+          "kind": "basic",
+          "name": "BasicCalendarAdminFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "calendar_admin_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicCalendarCouponFlow": {
+          "active": true,
+          "entity": "calendar_coupon",
+          "key$": "BasicCalendarCouponFlow",
+          "kind": "basic",
+          "name": "BasicCalendarCouponFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "calendar_coupon_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "calendar_coupon_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "calendar_coupon_ref01",
+                "srcdatavar": "calendar_coupon_ref01_data",
+                "suffix": "_up0",
+                "textfield": "code"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-calendar_coupon_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            }
+          ]
+        },
+        "BasicCalendarEventApprovalFlow": {
+          "active": true,
+          "entity": "calendar_event_approval",
+          "key$": "BasicCalendarEventApprovalFlow",
+          "kind": "basic",
+          "name": "BasicCalendarEventApprovalFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "calendar_event_approval_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicCalendarEventFlow": {
+          "active": true,
+          "entity": "calendar_event",
+          "key$": "BasicCalendarEventFlow",
+          "kind": "basic",
+          "name": "BasicCalendarEventFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "calendar_event_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "calendar_event_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "calendar_event_ref01",
+                "srcdatavar": "calendar_event_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {},
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-calendar_event_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicCalendarEventRejectionFlow": {
+          "active": true,
+          "entity": "calendar_event_rejection",
+          "key$": "BasicCalendarEventRejectionFlow",
+          "kind": "basic",
+          "name": "BasicCalendarEventRejectionFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "calendar_event_rejection_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicCalendarFlow": {
+          "active": true,
+          "entity": "calendar",
+          "key$": "BasicCalendarFlow",
+          "kind": "basic",
+          "name": "BasicCalendarFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "calendar_ref01",
+                "srcdatavar": "calendar_ref01_data",
+                "suffix": "_up0",
+                "textfield": "calendar_id"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-calendar_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "calendar_ref01",
+                "srcdatavar": "calendar_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {},
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-calendar_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicContactBlockFlow": {
+          "active": true,
+          "entity": "contact_block",
+          "key$": "BasicContactBlockFlow",
+          "kind": "basic",
+          "name": "BasicContactBlockFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "contact_block_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicContactFlow": {
+          "active": true,
+          "entity": "contact",
+          "key$": "BasicContactFlow",
+          "kind": "basic",
+          "name": "BasicContactFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "contact_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "contact_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "contact_ref01",
+                "suffix": "_rm0"
+              },
+              "match": {},
+              "op": "remove",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "suffix": "_rt0"
+              },
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "contact_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicContactRestoreFlow": {
+          "active": true,
+          "entity": "contact_restore",
+          "key$": "BasicContactRestoreFlow",
+          "kind": "basic",
+          "name": "BasicContactRestoreFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "contact_restore_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicContactTagAssignmentFlow": {
+          "active": true,
+          "entity": "contact_tag_assignment",
+          "key$": "BasicContactTagAssignmentFlow",
+          "kind": "basic",
+          "name": "BasicContactTagAssignmentFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "contact_tag_assignment_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "contact_tag_assignment_ref01",
+                "suffix": "_rm0"
+              },
+              "match": {},
+              "op": "remove",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicContactTagFlow": {
+          "active": true,
+          "entity": "contact_tag",
+          "key$": "BasicContactTagFlow",
+          "kind": "basic",
+          "name": "BasicContactTagFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "contact_tag_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "contact_tag_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "contact_tag_ref01",
+                "srcdatavar": "contact_tag_ref01_data",
+                "suffix": "_up0",
+                "textfield": "name"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-contact_tag_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "contact_tag_ref01",
+                "suffix": "_rm0"
+              },
+              "match": {},
+              "op": "remove",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "suffix": "_rt0"
+              },
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "contact_tag_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicEntityLookupFlow": {
+          "active": true,
+          "entity": "entity_lookup",
+          "key$": "BasicEntityLookupFlow",
+          "kind": "basic",
+          "name": "BasicEntityLookupFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "entity_lookup_ref01",
+                "srcdatavar": "entity_lookup_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {},
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-entity_lookup_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicEventCancelRequestFlow": {
+          "active": true,
+          "entity": "event_cancel_request",
+          "key$": "BasicEventCancelRequestFlow",
+          "kind": "basic",
+          "name": "BasicEventCancelRequestFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_cancel_request_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicEventCouponFlow": {
+          "active": true,
+          "entity": "event_coupon",
+          "key$": "BasicEventCouponFlow",
+          "kind": "basic",
+          "name": "BasicEventCouponFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_coupon_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "event_coupon_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_coupon_ref01",
+                "srcdatavar": "event_coupon_ref01_data",
+                "suffix": "_up0",
+                "textfield": "code"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-event_coupon_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            }
+          ]
+        },
+        "BasicEventFlow": {
+          "active": true,
+          "entity": "event",
+          "key$": "BasicEventFlow",
+          "kind": "basic",
+          "name": "BasicEventFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_ref01",
+                "srcdatavar": "event_ref01_data",
+                "suffix": "_up0",
+                "textfield": "access"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-event_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_ref01",
+                "srcdatavar": "event_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {},
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-event_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_ref01",
+                "suffix": "_rm0"
+              },
+              "match": {},
+              "op": "remove",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicEventTagAssignmentFlow": {
+          "active": true,
+          "entity": "event_tag_assignment",
+          "key$": "BasicEventTagAssignmentFlow",
+          "kind": "basic",
+          "name": "BasicEventTagAssignmentFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_tag_assignment_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_tag_assignment_ref01",
+                "suffix": "_rm0"
+              },
+              "match": {},
+              "op": "remove",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicEventTagFlow": {
+          "active": true,
+          "entity": "event_tag",
+          "key$": "BasicEventTagFlow",
+          "kind": "basic",
+          "name": "BasicEventTagFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_tag_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "event_tag_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_tag_ref01",
+                "srcdatavar": "event_tag_ref01_data",
+                "suffix": "_up0",
+                "textfield": "name"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-event_tag_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "event_tag_ref01",
+                "suffix": "_rm0"
+              },
+              "match": {},
+              "op": "remove",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "suffix": "_rt0"
+              },
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "event_tag_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicGuestFlow": {
+          "active": true,
+          "entity": "guest",
+          "key$": "BasicGuestFlow",
+          "kind": "basic",
+          "name": "BasicGuestFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "guest_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "guest_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "guest_ref01",
+                "srcdatavar": "guest_ref01_data",
+                "suffix": "_up0",
+                "textfield": "approval_status"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-guest_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "guest_ref01",
+                "srcdatavar": "guest_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {},
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-guest_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicGuestInviteFlow": {
+          "active": true,
+          "entity": "guest_invite",
+          "key$": "BasicGuestInviteFlow",
+          "kind": "basic",
+          "name": "BasicGuestInviteFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "guest_invite_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicGuestTicketFlow": {
+          "active": true,
+          "entity": "guest_ticket",
+          "key$": "BasicGuestTicketFlow",
+          "kind": "basic",
+          "name": "BasicGuestTicketFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "guest_ticket_ref01",
+                "srcdatavar": "guest_ticket_ref01_data",
+                "suffix": "_up0",
+                "textfield": "event_id"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-guest_ticket_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            }
+          ]
+        },
+        "BasicHostFlow": {
+          "active": true,
+          "entity": "host",
+          "key$": "BasicHostFlow",
+          "kind": "basic",
+          "name": "BasicHostFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "host_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "host_ref01",
+                "srcdatavar": "host_ref01_data",
+                "suffix": "_up0",
+                "textfield": "email"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-host_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "host_ref01",
+                "suffix": "_rm0"
+              },
+              "match": {},
+              "op": "remove",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicImageUploadFlow": {
+          "active": true,
+          "entity": "image_upload",
+          "key$": "BasicImageUploadFlow",
+          "kind": "basic",
+          "name": "BasicImageUploadFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "image_upload_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicMemberFlow": {
+          "active": true,
+          "entity": "member",
+          "key$": "BasicMemberFlow",
+          "kind": "basic",
+          "name": "BasicMemberFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "member_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "member_ref01",
+                "srcdatavar": "member_ref01_data",
+                "suffix": "_up0",
+                "textfield": "email"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-member_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            }
+          ]
+        },
+        "BasicMembershipTierFlow": {
+          "active": true,
+          "entity": "membership_tier",
+          "key$": "BasicMembershipTierFlow",
+          "kind": "basic",
+          "name": "BasicMembershipTierFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "membership_tier_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOrganizationAdminFlow": {
+          "active": true,
+          "entity": "organization_admin",
+          "key$": "BasicOrganizationAdminFlow",
+          "kind": "basic",
+          "name": "BasicOrganizationAdminFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "organization_admin_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOrganizationCalendarFlow": {
+          "active": true,
+          "entity": "organization_calendar",
+          "key$": "BasicOrganizationCalendarFlow",
+          "kind": "basic",
+          "name": "BasicOrganizationCalendarFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "organization_calendar_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "organization_calendar_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOrganizationEventFlow": {
+          "active": true,
+          "entity": "organization_event",
+          "key$": "BasicOrganizationEventFlow",
+          "kind": "basic",
+          "name": "BasicOrganizationEventFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "organization_event_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicOrganizationEventTransferFlow": {
+          "active": true,
+          "entity": "organization_event_transfer",
+          "key$": "BasicOrganizationEventTransferFlow",
+          "kind": "basic",
+          "name": "BasicOrganizationEventTransferFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "organization_event_transfer_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            }
+          ]
+        },
+        "BasicTicketTypeFlow": {
+          "active": true,
+          "entity": "ticket_type",
+          "key$": "BasicTicketTypeFlow",
+          "kind": "basic",
+          "name": "BasicTicketTypeFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "ticket_type_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "ticket_type_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "ticket_type_ref01",
+                "srcdatavar": "ticket_type_ref01_data",
+                "suffix": "_up0",
+                "textfield": "description"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-ticket_type_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "ticket_type_ref01",
+                "srcdatavar": "ticket_type_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {},
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-ticket_type_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "ticket_type_ref01",
+                "suffix": "_rm0"
+              },
+              "match": {},
+              "op": "remove",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "suffix": "_rt0"
+              },
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "ticket_type_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicUserFlow": {
+          "active": true,
+          "entity": "user",
+          "key$": "BasicUserFlow",
+          "kind": "basic",
+          "name": "BasicUserFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "user_ref01",
+                "srcdatavar": "user_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {},
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-user_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "BasicWebhookFlow": {
+          "active": true,
+          "entity": "webhook",
+          "key$": "BasicWebhookFlow",
+          "kind": "basic",
+          "name": "BasicWebhookFlow",
+          "param": {},
+          "step": [
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "webhook_ref01"
+              },
+              "match": {},
+              "op": "create",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemExists",
+                  "def": {
+                    "ref": "webhook_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "webhook_ref01",
+                "srcdatavar": "webhook_ref01_data",
+                "suffix": "_up0",
+                "textfield": "created_at"
+              },
+              "match": {},
+              "op": "update",
+              "spec": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-webhook_ref01"
+                  }
+                }
+              ],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "webhook_ref01",
+                "srcdatavar": "webhook_ref01_data",
+                "suffix": "_dt0"
+              },
+              "match": {},
+              "op": "load",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "TextFieldMark",
+                  "def": {
+                    "mark": "Mark01-webhook_ref01"
+                  }
+                }
+              ]
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "ref": "webhook_ref01",
+                "suffix": "_rm0"
+              },
+              "match": {},
+              "op": "remove",
+              "spec": [],
+              "valid": []
+            },
+            {
+              "active": true,
+              "data": {},
+              "input": {
+                "suffix": "_rt0"
+              },
+              "match": {},
+              "op": "list",
+              "spec": [],
+              "valid": [
+                {
+                  "apply": "ItemNotExists",
+                  "def": {
+                    "ref": "webhook_ref01"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "info": {
+        "contact": {
+          "name": "Luma Support",
+          "url": "https://help.luma.com"
+        },
+        "description": "API for interacting with Luma's event platform.\n\n## Rate Limits\n\nThe Luma API uses a per-minute rate limit shared across `GET` and `POST` requests:\n\n- **Calendar API keys** and OAuth tokens: **200 requests/minute** per calendar.\n- **Organization API keys**: **500 requests/minute** per organization.\n\nWhen you exceed the limit the API returns `429 Too Many Requests`. Back off before retrying.",
+        "license": {
+          "name": "Proprietary"
+        },
+        "security": {
+          "in": "header",
+          "name": "x-luma-api-key",
+          "prefix": "",
+          "scheme": "apiKeyAuth",
+          "type": "apiKey"
+        },
+        "servers": [
+          {
+            "description": "Production server",
+            "url": "https://public-api.luma.com"
+          }
+        ],
+        "summary": "API for interacting with Luma's event platform.",
+        "title": "Luma API",
+        "version": "1.0.0",
+        "website": "https://public-api.luma.com"
+      },
+      "option": {},
+      "target": {
+        "go": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "luma"
+          },
+          "name": "go",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "srcfeature": false,
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "luma"
+          },
+          "name": "go-cli",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            }
+          },
+          "title": "Go CLI"
+        },
+        "go-mcp": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "luma"
+          },
+          "name": "go-mcp",
+          "phase": {
+            "agentguide": {
+              "active": false
+            },
+            "entity": {
+              "active": false
+            },
+            "feature": {
+              "active": false
+            },
+            "readme": {
+              "active": false
+            },
+            "test": {
+              "active": false
+            }
+          },
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "",
+              "package": "",
+              "state": "pending",
+              "url": "",
+              "vault": {
+                "alias": "",
+                "env": "",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "root"
+            }
+          },
+          "title": "Go MCP server"
+        },
+        "js": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "dotenv": {
+              "active": true,
+              "kind": "dev",
+              "version": "^17.4.2"
+            }
+          },
+          "ext": "js",
+          "module": {
+            "name": "luma"
+          },
+          "name": "js",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "title": "JavaScript"
+        },
+        "lua": {
+          "active": true,
+          "comment": {
+            "line": "--"
+          },
+          "deps": {
+            "dkjson": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.5"
+            }
+          },
+          "ext": "lua",
+          "module": {
+            "name": "luma"
+          },
+          "name": "lua",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "luarocks",
+              "package": "",
+              "state": "pending",
+              "url": "https://luarocks.org",
+              "vault": {
+                "alias": "luarocks",
+                "env": "LUAROCKS_API_KEY",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "srcfeature": false,
+          "title": "Lua"
+        },
+        "php": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "php",
+          "module": {
+            "name": "luma"
+          },
+          "name": "php",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "packagist",
+              "package": "",
+              "state": "pending",
+              "url": "https://packagist.org",
+              "vault": {
+                "alias": "packagist",
+                "env": "PACKAGIST_API_TOKEN",
+                "recipe": ""
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "srcfeature": false,
+          "title": "PHP"
+        },
+        "py": {
+          "active": true,
+          "comment": {
+            "line": "#"
+          },
+          "deps": {
+            "requests": {
+              "active": true,
+              "kind": "prod",
+              "version": "2.33"
+            }
+          },
+          "ext": "py",
+          "module": {
+            "name": "luma"
+          },
+          "name": "py",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "pypi",
+              "package": "",
+              "state": "pending",
+              "url": "https://pypi.org",
+              "vault": {
+                "alias": "pypi",
+                "env": "",
+                "recipe": "pypi"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "srcfeature": false,
+          "title": "Python"
+        },
+        "ts": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "dotenv": {
+              "active": true,
+              "kind": "dev",
+              "version": "^17.4.2"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "module": {
+            "name": "luma"
+          },
+          "name": "ts",
+          "publish": {
+            "registry": {
+              "active": false,
+              "name": "npm",
+              "package": "",
+              "state": "pending",
+              "url": "https://registry.npmjs.org",
+              "vault": {
+                "alias": "npm",
+                "env": "",
+                "recipe": "npm"
+              }
+            },
+            "tag": {
+              "active": true,
+              "prefix": "",
+              "vault": {
+                "alias": "github",
+                "recipe": "github"
+              },
+              "via": "port"
+            }
+          },
+          "title": "TypeScript"
+        }
+      }
+    }
+  },
+  "name": "luma",
+  "name-": "luma",
+  "name_": "luma",
+  "name__orig": "luma",
+  "origin": "voxgig-sdk"
+}

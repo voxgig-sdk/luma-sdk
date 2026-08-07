@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "calendar_event_rejection": {
+      "CALENDAR_EVENT_REJECTION00": {
+        "calendar_event_id": "CALENDAR_EVENT01",
+        "message": "s15",
+        "id": "CALENDAR_EVENT_REJECTION00"
+      },
+      "CALENDAR_EVENT_REJECTION01": {
+        "calendar_event_id": "CALENDAR_EVENT01",
+        "message": "s29",
+        "id": "CALENDAR_EVENT_REJECTION01"
+      },
+      "CALENDAR_EVENT_REJECTION02": {
+        "calendar_event_id": "CALENDAR_EVENT01",
+        "message": "s3d",
+        "id": "CALENDAR_EVENT_REJECTION02"
+      }
+    }
+  },
+  "new": {
+    "calendar_event_rejection": {
+      "calendar_event_rejection_ref01": {
+        "calendar_event_id": "CALENDAR_EVENT01",
+        "message": "s51"
+      }
+    }
+  }
+}

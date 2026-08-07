@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "member": {
+      "MEMBER00": {
+        "email": "s46",
+        "membership_id": "MEMBERSHIP01",
+        "membership_tier_id": "MEMBERSHIP_TIER01",
+        "registration_answer": [],
+        "skip_payment": true,
+        "status": "s4b",
+        "user_id": "USER01",
+        "id": "MEMBER00"
+      },
+      "MEMBER01": {
+        "email": "s8c",
+        "membership_id": "MEMBERSHIP01",
+        "membership_tier_id": "MEMBERSHIP_TIER01",
+        "registration_answer": [],
+        "skip_payment": true,
+        "status": "s91",
+        "user_id": "USER01",
+        "id": "MEMBER01"
+      },
+      "MEMBER02": {
+        "email": "sd2",
+        "membership_id": "MEMBERSHIP01",
+        "membership_tier_id": "MEMBERSHIP_TIER01",
+        "registration_answer": [],
+        "skip_payment": true,
+        "status": "sd7",
+        "user_id": "USER01",
+        "id": "MEMBER02"
+      }
+    }
+  },
+  "new": {
+    "member": {
+      "member_ref01": {
+        "email": "s118",
+        "membership_id": "MEMBERSHIP01",
+        "membership_tier_id": "MEMBERSHIP_TIER01",
+        "registration_answer": [],
+        "skip_payment": true,
+        "status": "s11d",
+        "user_id": "USER01"
+      }
+    }
+  }
+}

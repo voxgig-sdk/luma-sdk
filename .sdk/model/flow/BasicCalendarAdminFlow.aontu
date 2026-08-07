@@ -1,0 +1,22 @@
+# BasicCalendarAdminFlow
+
+main: kit: flow: BasicCalendarAdminFlow:
+{
+  entity: "calendar_admin",
+  kind: "basic",
+  name: "BasicCalendarAdminFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "calendar_admin_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCalendarAdminFlow"
+}

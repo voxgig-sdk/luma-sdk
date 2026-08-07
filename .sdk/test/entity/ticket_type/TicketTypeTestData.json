@@ -1,0 +1,69 @@
+{
+  "existing": {
+    "ticket_type": {
+      "TICKET_TYPE00": {
+        "cent": "s82",
+        "currency": "s83",
+        "description": "s84",
+        "id": "TICKET_TYPE00",
+        "is_flexible": true,
+        "is_hidden": false,
+        "max_capacity": "s88",
+        "min_cent": "s89",
+        "name": "s8a",
+        "require_approval": false,
+        "type": "s8c",
+        "valid_end_at": "s8d",
+        "valid_start_at": "s8e"
+      },
+      "TICKET_TYPE01": {
+        "cent": "s104",
+        "currency": "s105",
+        "description": "s106",
+        "id": "TICKET_TYPE01",
+        "is_flexible": true,
+        "is_hidden": false,
+        "max_capacity": "s10a",
+        "min_cent": "s10b",
+        "name": "s10c",
+        "require_approval": false,
+        "type": "s10e",
+        "valid_end_at": "s10f",
+        "valid_start_at": "s110"
+      },
+      "TICKET_TYPE02": {
+        "cent": "s186",
+        "currency": "s187",
+        "description": "s188",
+        "id": "TICKET_TYPE02",
+        "is_flexible": true,
+        "is_hidden": false,
+        "max_capacity": "s18c",
+        "min_cent": "s18d",
+        "name": "s18e",
+        "require_approval": false,
+        "type": "s190",
+        "valid_end_at": "s191",
+        "valid_start_at": "s192"
+      }
+    }
+  },
+  "new": {
+    "ticket_type": {
+      "ticket_type_ref01": {
+        "cent": "s208",
+        "currency": "s209",
+        "description": "s20a",
+        "is_flexible": true,
+        "is_hidden": false,
+        "max_capacity": "s20e",
+        "min_cent": "s20f",
+        "name": "s210",
+        "require_approval": false,
+        "type": "s212",
+        "valid_end_at": "s213",
+        "valid_start_at": "s214"
+      }
+    }
+  }
+}

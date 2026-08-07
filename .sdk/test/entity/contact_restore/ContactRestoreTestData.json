@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "contact_restore": {
+      "CONTACT_RESTORE00": {
+        "contact_id": "CONTACT01",
+        "email": "s15",
+        "id": "CONTACT_RESTORE00"
+      },
+      "CONTACT_RESTORE01": {
+        "contact_id": "CONTACT01",
+        "email": "s29",
+        "id": "CONTACT_RESTORE01"
+      },
+      "CONTACT_RESTORE02": {
+        "contact_id": "CONTACT01",
+        "email": "s3d",
+        "id": "CONTACT_RESTORE02"
+      }
+    }
+  },
+  "new": {
+    "contact_restore": {
+      "contact_restore_ref01": {
+        "contact_id": "CONTACT01",
+        "email": "s51"
+      }
+    }
+  }
+}

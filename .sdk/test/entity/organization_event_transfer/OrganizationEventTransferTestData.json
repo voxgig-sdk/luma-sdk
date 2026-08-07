@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "organization_event_transfer": {
+      "ORGANIZATION_EVENT_TRANSFER00": {
+        "calendar_id": "CALENDAR01",
+        "event_id": "EVENT01",
+        "id": "ORGANIZATION_EVENT_TRANSFER00"
+      },
+      "ORGANIZATION_EVENT_TRANSFER01": {
+        "calendar_id": "CALENDAR01",
+        "event_id": "EVENT01",
+        "id": "ORGANIZATION_EVENT_TRANSFER01"
+      },
+      "ORGANIZATION_EVENT_TRANSFER02": {
+        "calendar_id": "CALENDAR01",
+        "event_id": "EVENT01",
+        "id": "ORGANIZATION_EVENT_TRANSFER02"
+      }
+    }
+  },
+  "new": {
+    "organization_event_transfer": {
+      "organization_event_transfer_ref01": {
+        "calendar_id": "CALENDAR01",
+        "event_id": "EVENT01"
+      }
+    }
+  }
+}

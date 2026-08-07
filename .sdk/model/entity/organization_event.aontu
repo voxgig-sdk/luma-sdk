@@ -1,0 +1,248 @@
+# Entity: organization_event
+
+main: kit: entity: organization_event: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "api_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "calendar_api_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "calendar_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "coordinate"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "cover_url"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "created_at"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "display_price"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "duration_interval"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "end_at"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "feedback_email"
+      req: true
+      type: "`$OBJECT`"
+    }
+    {
+      name: "geo_address_json"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "geo_latitude"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "geo_longitude"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "location_type"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "location_visibility"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "managing_calendar"
+      req: true
+      type: "`$ARRAY`"
+    }
+    {
+      name: "meeting_url"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "name"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "platform"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "registration_open"
+      req: true
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "registration_question"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "require_approval"
+      req: true
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "spots_remaining"
+      req: true
+      type: "`$ANY`"
+    }
+    {
+      name: "start_at"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "timezone"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "user_api_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "user_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "visibility"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "waitlist_status"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "zoom_meeting_url"
+      req: true
+      type: "`$ANY`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "organization_event"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "after"
+                orig: "after"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "before"
+                orig: "before"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_cursor"
+                orig: "pagination_cursor"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "pagination_limit"
+                orig: "pagination_limit"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                kind: "query"
+                name: "sort_direction"
+                orig: "sort_direction"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/v1/organizations/events/list"
+          parts: [
+            "v1"
+            "organizations"
+            "events"
+            "list"
+          ]
+          select: {
+            exist: [
+              "after"
+              "before"
+              "pagination_cursor"
+              "pagination_limit"
+              "sort_direction"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.entries`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

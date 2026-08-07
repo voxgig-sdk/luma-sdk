@@ -1,0 +1,22 @@
+# BasicOrganizationAdminFlow
+
+main: kit: flow: BasicOrganizationAdminFlow:
+{
+  entity: "organization_admin",
+  kind: "basic",
+  name: "BasicOrganizationAdminFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "organization_admin_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicOrganizationAdminFlow"
+}

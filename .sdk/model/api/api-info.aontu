@@ -1,0 +1,44 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Luma Support"
+        url: "https://help.luma.com"
+      }
+      description: `API for interacting with Luma's event platform.
+
+## Rate Limits
+
+The Luma API uses a per-minute rate limit shared across \`GET\` and \`POST\` requests:
+
+- **Calendar API keys** and OAuth tokens: **200 requests/minute** per calendar.
+- **Organization API keys**: **500 requests/minute** per organization.
+
+When you exceed the limit the API returns \`429 Too Many Requests\`. Back off before retrying.`
+      license: {
+        name: "Proprietary"
+      }
+      security: {
+        in: "header"
+        name: "x-luma-api-key"
+        prefix: ""
+        scheme: "apiKeyAuth"
+        type: "apiKey"
+      }
+      servers: [
+        {
+          description: "Production server"
+          url: "https://public-api.luma.com"
+        }
+      ]
+      summary: "API for interacting with Luma's event platform."
+      title: "Luma API"
+      version: "1.0.0"
+      website: "https://public-api.luma.com"
+    }
+  }
+}
+

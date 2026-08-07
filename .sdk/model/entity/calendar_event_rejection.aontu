@@ -1,0 +1,45 @@
+# Entity: calendar_event_rejection
+
+main: kit: entity: calendar_event_rejection: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "calendar_event_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "message"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "calendar_event_rejection"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/calendars/events/reject"
+          parts: [
+            "v1"
+            "calendars"
+            "events"
+            "reject"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

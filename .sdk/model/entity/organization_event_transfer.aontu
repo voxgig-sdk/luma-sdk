@@ -1,0 +1,45 @@
+# Entity: organization_event_transfer
+
+main: kit: entity: organization_event_transfer: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "calendar_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "event_id"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "organization_event_transfer"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/organizations/events/transfer-calendar"
+          parts: [
+            "v1"
+            "organizations"
+            "events"
+            "transfer-calendar"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

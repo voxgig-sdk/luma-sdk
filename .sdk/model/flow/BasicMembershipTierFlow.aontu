@@ -1,0 +1,22 @@
+# BasicMembershipTierFlow
+
+main: kit: flow: BasicMembershipTierFlow:
+{
+  entity: "membership_tier",
+  kind: "basic",
+  name: "BasicMembershipTierFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "membership_tier_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMembershipTierFlow"
+}

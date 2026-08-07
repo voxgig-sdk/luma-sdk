@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "membership_tier": {
+      "MEMBERSHIP_TIER00": {
+        "access_info": "s32",
+        "description": "s33",
+        "id": "MEMBERSHIP_TIER00",
+        "name": "s35",
+        "tint_color": "s36"
+      },
+      "MEMBERSHIP_TIER01": {
+        "access_info": "s64",
+        "description": "s65",
+        "id": "MEMBERSHIP_TIER01",
+        "name": "s67",
+        "tint_color": "s68"
+      },
+      "MEMBERSHIP_TIER02": {
+        "access_info": "s96",
+        "description": "s97",
+        "id": "MEMBERSHIP_TIER02",
+        "name": "s99",
+        "tint_color": "s9a"
+      }
+    }
+  },
+  "new": {
+    "membership_tier": {
+      "membership_tier_ref01": {
+        "access_info": "sc8",
+        "description": "sc9",
+        "name": "scb",
+        "tint_color": "scc"
+      }
+    }
+  }
+}

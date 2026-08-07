@@ -1,0 +1,18 @@
+# BasicContactBlockFlow
+
+main: kit: flow: BasicContactBlockFlow:
+{
+  entity: "contact_block",
+  kind: "basic",
+  name: "BasicContactBlockFlow",
+  step: [
+    {
+      input: {
+        ref: "contact_block_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicContactBlockFlow"
+}

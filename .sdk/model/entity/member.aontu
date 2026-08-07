@@ -1,0 +1,89 @@
+# Entity: member
+
+main: kit: entity: member: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "email"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "membership_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "membership_tier_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "registration_answer"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "skip_payment"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "status"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "user_id"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "member"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/memberships/members/add"
+          parts: [
+            "v1"
+            "memberships"
+            "members"
+            "add"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/memberships/members/update-status"
+          parts: [
+            "v1"
+            "memberships"
+            "members"
+            "update-status"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

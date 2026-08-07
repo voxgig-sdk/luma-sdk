@@ -1,0 +1,18 @@
+# BasicCalendarEventRejectionFlow
+
+main: kit: flow: BasicCalendarEventRejectionFlow:
+{
+  entity: "calendar_event_rejection",
+  kind: "basic",
+  name: "BasicCalendarEventRejectionFlow",
+  step: [
+    {
+      input: {
+        ref: "calendar_event_rejection_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicCalendarEventRejectionFlow"
+}

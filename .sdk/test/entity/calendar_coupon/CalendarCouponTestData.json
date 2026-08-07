@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "calendar_coupon": {
+      "CALENDAR_COUPON00": {
+        "cents_off": "s64",
+        "code": "s65",
+        "currency": "s66",
+        "discount": "s67",
+        "event_ticket_type_id": "EVENT_TICKET_TYPE01",
+        "id": "CALENDAR_COUPON00",
+        "percent_off": "s6a",
+        "remaining_count": "s6b",
+        "valid_end_at": "s6c",
+        "valid_start_at": "s6d"
+      },
+      "CALENDAR_COUPON01": {
+        "cents_off": "sc8",
+        "code": "sc9",
+        "currency": "sca",
+        "discount": "scb",
+        "event_ticket_type_id": "EVENT_TICKET_TYPE01",
+        "id": "CALENDAR_COUPON01",
+        "percent_off": "sce",
+        "remaining_count": "scf",
+        "valid_end_at": "sd0",
+        "valid_start_at": "sd1"
+      },
+      "CALENDAR_COUPON02": {
+        "cents_off": "s12c",
+        "code": "s12d",
+        "currency": "s12e",
+        "discount": "s12f",
+        "event_ticket_type_id": "EVENT_TICKET_TYPE01",
+        "id": "CALENDAR_COUPON02",
+        "percent_off": "s132",
+        "remaining_count": "s133",
+        "valid_end_at": "s134",
+        "valid_start_at": "s135"
+      }
+    }
+  },
+  "new": {
+    "calendar_coupon": {
+      "calendar_coupon_ref01": {
+        "cents_off": "s190",
+        "code": "s191",
+        "currency": "s192",
+        "discount": "s193",
+        "event_ticket_type_id": "EVENT_TICKET_TYPE01",
+        "percent_off": "s196",
+        "remaining_count": "s197",
+        "valid_end_at": "s198",
+        "valid_start_at": "s199"
+      }
+    }
+  }
+}

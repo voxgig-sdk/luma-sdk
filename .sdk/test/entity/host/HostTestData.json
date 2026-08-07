@@ -1,0 +1,41 @@
+{
+  "existing": {
+    "host": {
+      "HOST00": {
+        "access_level": "s32",
+        "email": "s33",
+        "event_id": "EVENT01",
+        "is_visible": false,
+        "name": "s36",
+        "id": "HOST00"
+      },
+      "HOST01": {
+        "access_level": "s64",
+        "email": "s65",
+        "event_id": "EVENT01",
+        "is_visible": false,
+        "name": "s68",
+        "id": "HOST01"
+      },
+      "HOST02": {
+        "access_level": "s96",
+        "email": "s97",
+        "event_id": "EVENT01",
+        "is_visible": false,
+        "name": "s9a",
+        "id": "HOST02"
+      }
+    }
+  },
+  "new": {
+    "host": {
+      "host_ref01": {
+        "access_level": "sc8",
+        "email": "sc9",
+        "event_id": "EVENT01",
+        "is_visible": false,
+        "name": "scc"
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+# Entity: event_cancel_request
+
+main: kit: entity: event_cancel_request: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "cancellation_token"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "event_id"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "guest_count"
+      req: true
+      type: "`$NUMBER`"
+    }
+    {
+      name: "is_paid"
+      req: true
+      type: "`$BOOLEAN`"
+    }
+  ]
+
+  name: "event_cancel_request"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/v1/events/cancel/request"
+          parts: [
+            "v1"
+            "events"
+            "cancel"
+            "request"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

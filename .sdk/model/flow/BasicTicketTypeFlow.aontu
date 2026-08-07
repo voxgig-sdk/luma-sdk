@@ -1,0 +1,92 @@
+# BasicTicketTypeFlow
+
+main: kit: flow: BasicTicketTypeFlow:
+{
+  entity: "ticket_type",
+  kind: "basic",
+  name: "BasicTicketTypeFlow",
+  step: [
+    {
+      input: {
+        ref: "ticket_type_ref01"
+      }
+
+      op: "create"
+    }
+
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "ticket_type_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "ticket_type_ref01",
+        srcdatavar: "ticket_type_ref01_data",
+        suffix: "_up0",
+        textfield: "description"
+      }
+
+      op: "update",
+      spec: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-ticket_type_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "ticket_type_ref01",
+        srcdatavar: "ticket_type_ref01_data",
+        suffix: "_dt0"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-ticket_type_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      input: {
+        ref: "ticket_type_ref01",
+        suffix: "_rm0"
+      }
+
+      op: "remove"
+    }
+
+    {
+      input: {
+        suffix: "_rt0"
+      }
+
+      op: "list",
+      valid: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "ticket_type_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTicketTypeFlow"
+}
